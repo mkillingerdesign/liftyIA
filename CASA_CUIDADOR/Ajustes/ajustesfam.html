@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>L Duo - Ajustes Cuidador</title>
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  <link rel="icon" sizes="192x192" href="../img/icon.png">
+  <link rel="icon" sizes="512x512" href="../img/icon.png">
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ajustesfam.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <svg class="corazon-img" viewBox="0 0 100 100" width="50" height="50">
+            <path class="corazon-path" d="M50 88.87C17.73 70.47 10 52.67 10 37.5a20 20 0 0134.64-13.33L50 30.73l5.36-6.56A20 20 0 0190 37.5c0 15.17-7.73 32.97-40 51.37z" />
+          </svg>
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>8:00</span>
+              <span>10:00</span>
+              <span>14:00</span>
+              <span>17:00</span>
+              <span>20:00</span>
+              <span>22:00</span>
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <div class="ajustes-container">
+      <h1>Ajustaments</h1>
+
+      <!-- Sección Notificaciones -->
+      <div class="ajuste-seccion">
+        <h2>Notificacions</h2>
+        <div class="opcion">
+          <label>Alertes d'emergència</label>
+          <input type="checkbox" id="emergency-alerts" checked>
+        </div>
+        <div class="opcion">
+          <label>So de notificacions</label>
+          <select id="notif-sound">
+            <option value="default">Per defecte</option>
+            <option value="beep">Beep</option>
+            <option value="melody">Melodía</option>
+          </select>
+        </div>
+        <div class="opcion">
+          <label>Freqüència de recordatoris</label>
+          <select id="reminder-frequency">
+            <option value="hourly">Cada hora</option>
+            <option value="daily">Diari</option>
+            <option value="custom">Personalitzat</option>
+          </select>
+        </div>
+        <div class="opcion">
+          <label>Umbral de freqüència cardíaca (BPM)</label>
+          <input type="number" id="bpm-threshold" min="40" max="200" value="100">
+        </div>
+      </div>
+
+      <!-- Sección Vinculación de dispositivos -->
+      <div class="ajuste-seccion">
+        <h2>Vinculació de dispositius</h2>
+        <div class="opcion">
+          <label>Vincular dispositiu de l'usuari</label>
+          <button class="btn-conectar" id="connect-device">Vincular</button>
+        </div>
+        <div class="dispositivos-lista" id="device-list">
+          <p>No hi ha dispositius vinculats.</p>
+        </div>
+      </div>
+
+      <!-- Sección Monitorización -->
+      <div class="ajuste-seccion">
+        <h2>Monitorització</h2>
+        <div class="opcion">
+          <label>Freqüència d'actualització d'ubicació</label>
+          <select id="location-frequency">
+            <option value="realtime">Temps real</option>
+            <option value="5min">Cada 5 minuts</option>
+            <option value="15min">Cada 15 minuts</option>
+          </select>
+        </div>
+        <div class="opcion">
+          <label>Zona segura (radi en metres)</label>
+          <input type="number" id="safe-zone-radius" min="50" max="1000" value="200">
+        </div>
+        <div class="opcion">
+          <label>Monitorització de salut</label>
+          <select id="health-monitoring">
+            <option value="full">Completa (BPM, passos, son)</option>
+            <option value="basic">Bàsica (BPM, passos)</option>
+            <option value="off">Desactivada</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Sección Accesibilidad -->
+      <div class="ajuste-seccion">
+        <h2>Accessibilitat</h2>
+        <div class="opcion">
+          <label>Veu de Lifty</label>
+          <select id="lifty-voice">
+            <option value="femenina">Veu femenina</option>
+            <option value="masculina">Veu masculina</option>
+            <option value="neutra">Veu neutra</option>
+          </select>
+        </div>
+        <div class="opcion">
+          <label>Mida de la lletra</label>
+          <input type="range" id="font-size" min="12" max="24" value="16">
+        </div>
+        <div class="opcion">
+          <label>Contrast alt</label>
+          <input type="checkbox" id="high-contrast">
+        </div>
+        <div class="opcion">
+          <label>Mode simplificat</label>
+          <input type="checkbox" id="simplified-mode">
+        </div>
+      </div>
+
+      <!-- Sección Seguridad y Privacidad -->
+      <div class="ajuste-seccion">
+        <h2>Seguretat i privacitat</h2>
+        <div class="opcion">
+          <label>Contrasenya</label>
+          <input type="password" id="password" placeholder="Nova contrasenya">
+        </div>
+        <div class="opcion">
+          <label>Autenticació biomètrica</label>
+          <input type="checkbox" id="biometric-auth">
+        </div>
+        <div class="opcion">
+          <label>Permetre dades anònimes</label>
+          <input type="checkbox" id="anonymous-data" checked>
+        </div>
+        <div class="opcion">
+          <label></label>
+          <button class="btn-guardar" id="logout">Tancar sessió</button>
+        </div>
+      </div>
+
+      <!-- Sección Cuenta -->
+      <div class="ajuste-seccion">
+        <h2>Compte</h2>
+        <div class="opcion">
+          <label>Nom del cuidador</label>
+          <input type="text" id="caregiver-name" placeholder="Ex: Joan Pérez">
+        </div>
+        <div class="opcion">
+          <label>Contacte d'emergència</label>
+          <input type="tel" id="emergency-contact" placeholder="Ex: +34 123 456 789">
+        </div>
+        <div class="opcion">
+          <label>Idioma</label>
+          <select id="language">
+            <option value="ca">Català</option>
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Sección Información de la App -->
+      <div class="ajuste-seccion">
+        <h2>Informació de l'App</h2>
+        <p>Versió: 1.0.0 (Beta)</p>
+        <p>Desenvolupada per: Lifty</p>
+        <button class="btn-info" id="more-info">Més informació</button>
+      </div>
+    </div>
+
+    
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../AJUSTES/ajustes.html" class="nav-item casa activo" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../Progreso/progresofam.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../img/1 estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../fam.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../img/Home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../Perfil/perfilfam.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <script>
+    // Animación del header-bottom
+    const headerBottom = document.getElementById("headerBottom");
+    const corazonImg = document.querySelector(".corazon-img");
+    headerBottom.addEventListener("click", () => {
+      headerBottom.classList.toggle("expandido");
+    });
+
+    // Corazón emocional
+    let emocionActual = "feliz";
+    corazonImg.classList.add(emocionActual);
+    setInterval(() => {
+      const emociones = ["feliz", "ansioso", "triste", "enojado"];
+      emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+      corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+      corazonImg.classList.add(emocionActual);
+    }, 5000);
+
+    // Navegación moderna
+    const navItems = document.querySelectorAll(".nav-item");
+    const liftyGuia = document.getElementById("liftyGuia");
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        navItems.forEach(i => i.classList.remove("activo"));
+        item.classList.add("activo");
+        const rect = item.getBoundingClientRect();
+        liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+        liftyGuia.classList.add("viajar");
+        if (item.dataset.seccion === "progreso") {
+          document.querySelector(".cohete").classList.add("despegar");
+        }
+      });
+    });
+
+    // Interactividad de los días
+    const dias = document.querySelectorAll(".dia");
+    dias.forEach(dia => {
+      dia.addEventListener("click", () => {
+        const parentCirculos = dia.closest(".circulos");
+        parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+        dia.classList.add("seleccionado");
+      });
+    });
+
+    // Chat IA
+    const iaChatTab = document.getElementById("iaChatTab");
+    const closeIaChat = document.getElementById("closeIaChat");
+    const iaSendMessage = document.getElementById("iaSendMessage");
+    const iaUserInput = document.getElementById("iaUserInput");
+    const iaChatBody = document.getElementById("iaChatBody");
+    const iaVoiceBtn = document.getElementById("iaVoiceBtn");
+
+    function adjustChatTabSize() {
+      iaChatTab.style.top = `0px`;
+      iaChatTab.style.height = `100vh`;
+    }
+
+    window.addEventListener("load", adjustChatTabSize);
+    window.addEventListener("resize", adjustChatTabSize);
+
+  
+
+    closeIaChat.addEventListener("click", () => {
+      iaChatTab.style.display = "none";
+    });
+
+    iaSendMessage.addEventListener("click", sendIaMessage);
+    iaUserInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendIaMessage();
+    });
+
+    function sendIaMessage() {
+      const message = iaUserInput.value.trim();
+      if (message) {
+        const userMsg = document.createElement("div");
+        userMsg.classList.add("mensaje", "usuario");
+        userMsg.textContent = message;
+        iaChatBody.appendChild(userMsg);
+        iaUserInput.value = "";
+        setTimeout(() => {
+          const iaMsg = document.createElement("div");
+          iaMsg.classList.add("mensaje", "lifty");
+          iaMsg.textContent = "Com et puc ajudar amb la configuració?";
+          iaChatBody.appendChild(iaMsg);
+          iaChatBody.scrollTop = iaChatBody.scrollHeight;
+        }, 1000);
+      }
+    }
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "ca-ES";
+    recognition.continuous = false;
+
+    iaVoiceBtn.addEventListener("click", () => {
+      recognition.start();
+      iaVoiceBtn.style.background = "#FF5E62";
+    });
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      iaUserInput.value = transcript;
+      sendIaMessage();
+    };
+
+    recognition.onend = () => {
+      iaVoiceBtn.style.background = "";
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Error en el reconeixement de veu:", event.error);
+    };
+
+    // Lógica para ajustes
+    // Vinculación de dispositivos
+    const connectDeviceBtn = document.getElementById("connect-device");
+    const deviceList = document.getElementById("device-list");
+    let devices = [];
+
+    connectDeviceBtn.addEventListener("click", () => {
+      const deviceName = `Smartwatch Lifty ${devices.length + 1}`;
+      devices.push({
+        id: devices.length,
+        name: deviceName,
+        type: "Smartwatch",
+        status: "Conectado",
+        lastSync: new Date().toLocaleString("ca-ES")
+      });
+      updateDeviceList();
+      alert(`Dispositiu ${deviceName} vinculat!`);
+    });
+
+    function updateDeviceList() {
+      deviceList.innerHTML = "";
+      if (devices.length === 0) {
+        deviceList.innerHTML = "<p>No hi ha dispositius vinculats.</p>";
+        return;
+      }
+      const table = document.createElement("table");
+      table.innerHTML = `
+        <tr>
+          <th>Nom</th>
+          <th>Tipus</th>
+          <th>Estat</th>
+          <th>Última sincronització</th>
+          <th>Accions</th>
+        </tr>
+      `;
+      devices.forEach(device => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${device.name}</td>
+          <td>${device.type}</td>
+          <td class="status-${device.status.toLowerCase()}">${device.status}</td>
+          <td>${device.lastSync}</td>
+          <td>
+            <button class="btn-desvincular" data-id="${device.id}">Desvincular</button>
+          </td>
+        `;
+        table.appendChild(row);
+      });
+      deviceList.appendChild(table);
+
+      // Añadir eventos a botones de desvincular
+      document.querySelectorAll(".btn-desvincular").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = parseInt(btn.dataset.id);
+          devices = devices.filter(device => device.id !== id);
+          updateDeviceList();
+          alert("Dispositiu desvinculat.");
+        });
+      });
+    }
+
+    // Accesibilidad: Tamaño de letra
+    const fontSizeSlider = document.getElementById("font-size");
+    fontSizeSlider.addEventListener("input", () => {
+      document.body.style.fontSize = `${fontSizeSlider.value}px`;
+    });
+
+    // Accesibilidad: Contraste alto
+    const highContrastCheckbox = document.getElementById("high-contrast");
+    highContrastCheckbox.addEventListener("change", () => {
+      document.body.classList.toggle("high-contrast", highContrastCheckbox.checked);
+    });
+
+    // Modo simplificado
+    const simplifiedModeCheckbox = document.getElementById("simplified-mode");
+    simplifiedModeCheckbox.addEventListener("change", () => {
+      document.body.classList.toggle("simplified-mode", simplifiedModeCheckbox.checked);
+    });
+
+    // Más información
+    document.getElementById("more-info").addEventListener("click", () => {
+      alert("L Duo és una aplicació per a cuidadores desenvolupada per xAI. Versió 1.0.0 Beta. Contacta amb suport@x.ai.");
+    });
+
+    // Cerrar sesión
+    document.getElementById("logout").addEventListener("click", () => {
+      if (confirm("Vols tancar la sessió?")) {
+        alert("Sessió tancada.");
+        window.location.href = "../login.html";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(140deg, #E58D00 50%, #ffffff 50%); 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.encabezado {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; 
+    margin-bottom: 20px;  
+}
+
+.flecha-atras img {
+    width: 40px;
+}
+
+.logo {
+    width: 160px; 
+    height: auto; 
+}
+
+.numero-pregunta {
+    background-color: #ffffff;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #E58D00;
+}
+
+.contenedor {
+    width: 320px;
+    height: 480px;
+    max-height: 1500px;
+    max-width: 425px; 
+    background-color: #FFFFFF;
+    border-radius: 70px;
+    box-shadow: 0 5px 10px #E58D00;
+    position: relative;
+    overflow: hidden; 
+    margin-bottom: 100px; 
+}
+
+
+.seccion-estrellas {
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.estrellas {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.estrellas img {
+    width: 254px;
+    height: 24px;
+    margin-top: -15px;
+}
+
+.etiqueta-datos {
+    font-size: 14px;
+    color: #A9A9A9;
+}
+
+
+.seccion-pregunta {
+    text-align: center;
+    margin: 30px 0;
+    position: relative; 
+}
+
+.pregunta {
+    margin-top:  -30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.mascota img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+.seccion-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.opcion {
+    background-color: #E6F0FA; 
+    border-radius: 15px;
+    width: 90px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, border 0.3s; 
+    margin-top: -20px;
+}
+
+.opcion:hover {
+    background-color: #d0e4f8; 
+}
+
+
+.opcion:active {
+    transform: scale(0.9); 
+}
+
+
+.opcion.seleccionada {
+    border: 2px solid #E58D00; 
+    background-color: #E6F0FA; 
+    color: #333; 
+}
+
+.opcion.seleccionada p {
+    color: #333; 
+}
+
+.opcion img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.opcion p {
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+}
+
+
+.texto-hablar {
+    font-size: 14px;
+    color: #A9A9A9;
+    text-align: center;
+    margin: 20px 0; 
+}
+
+.boton-microfono {
+    box-shadow: 0 5px 10px #E58D00;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 90px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #E6F0FA; 
+    transition: background-color 0.3s;
+}
+
+.boton-microfono img {
+    width: 40px; 
+    height: 40px;
+}
+
+
+.boton-microfono.pulsar {
+    animation: pulsar 1.5s infinite ease-in-out;
+}
+
+/* Animación de pulsación */
+@keyframes pulsar {
+    0% {
+        box-shadow: 0 0 0 0 rgba(#E58D00); 
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(70, 130, 180, 0); 
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(#E58D00); 
+    }
+}
+
+
+.boton-siguiente {
+    background-color: #E58D00;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+    width: 100%;
+    max-width: 350px; 
+    cursor: pointer;
+    text-align: center;
+    margin-top: -50px;
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+
+.boton-siguiente.escalar {
+    animation: escalar 0.5s ease-in-out;
+}
+
+/* Animación de escalado para indicar cambio de pantalla */
+@keyframes escalar {
+    0% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(0.9); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}

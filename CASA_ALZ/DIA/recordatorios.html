@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recordatorios diarios accesibles para niños con discapacidades funcionales">
+    <title>Recordatorios Diarios</title>
+    <link rel="stylesheet" href="dia.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="../casa.html" class="back-link" aria-label="Volver a la página principal">
+            <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+            </svg>
+        </a>
+        <h1>Recordatorios Diarios</h1>
+        <p>Hoy, haz estas cosas</p>
+        <div class="progress-container">
+            <p class="progress-text" aria-live="polite">0 de 6 tareas hechas</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="reminders" aria-labelledby="reminders-title">
+            <h2 id="reminders-title" class="visually-hidden">Lista de recordatorios diarios</h2>
+            <ul class="reminder-list">
+                <li class="reminder-item" tabindex="0" role="button" aria-label="A las 7:30, lávate los dientes con tu cepillo después de comer el desayuno" data-id="1">
+                    <span class="reminder-icon" aria-hidden="true">🪥</span>
+                    <div class="reminder-text">
+                        <p class="reminder-time">7:30</p>
+                        <p class="reminder-task">Lávate los dientes</p>
+                        <p class="reminder-detail">Usa tu cepillo después de comer el desayuno.</p>
+                    </div>
+                    <span class="check-icon" aria-hidden="true"></span>
+                </li>
+                <li class="reminder-item" tabindex="0" role="button" aria-label="A las 8:00, come un desayuno rico como pan o fruta para tener energía" data-id="2">
+                    <span class="reminder-icon" aria-hidden="true">🍎</span>
+                    <div class="reminder-text">
+                        <p class="reminder-time">8:00</p>
+                        <p class="reminder-task">Come desayuno</p>
+                        <p class="reminder-detail">Come pan o fruta para tener energía.</p>
+                    </div>
+                    <span class="check-icon" aria-hidden="true"></span>
+                </li>
+                <li class="reminder-item" tabindex="0" role="button" aria-label="A las 12:00, lava tus manos con jabón antes de comer el almuerzo" data-id="3">
+                    <span class="reminder-icon" aria-hidden="true">🧼</span>
+                    <div class="reminder-text">
+                        <p class="reminder-time">12:00</p>
+                        <p class="reminder-task">Lava tus manos</p>
+                        <p class="reminder-detail">Usa jabón antes de comer el almuerzo.</p>
+                    </div>
+                    <span class="check-icon" aria-hidden="true"></span>
+                </li>
+                <li class="reminder-item" tabindex="0" role="button" aria-label="Por la mañana, ordena tu cama para que tu cuarto esté bonito" data-id="4">
+                    <span class="reminder-icon" aria-hidden="true">🛏️</span>
+                    <div class="reminder-text">
+                        <p class="reminder-time">Por la mañana</p>
+                        <p class="reminder-task">Ordena tu cama</p>
+                        <p class="reminder-detail">Estira las sábanas para que tu cuarto esté bonito.</p>
+                    </div>
+                    <span class="check-icon" aria-hidden="true"></span>
+                </li>
+                <li class="reminder-item" tabindex="0" role="button" aria-label="A las 14:00, juega un ratito con un balón o tus juguetes favoritos" data-id="5">
+                    <span class="reminder-icon" aria-hidden="true">⚽</span>
+                    <div class="reminder-text">
+                        <p class="reminder-time">14:00</p>
+                        <p class="reminder-task">Juega un ratito</p>
+                        <p class="reminder-detail">Usa un balón o tus juguetes favoritos.</p>
+                    </div>
+                    <span class="check-icon" aria-hidden="true"></span>
+                </li>
+                <li class="reminder-item" tabindex="0" role="button" aria-label="A las 20:00, lee un cuento corto antes de ir a dormir" data-id="6">
+                    <span class="reminder-icon" aria-hidden="true">📚</span>
+                    <div class="reminder-text">
+                        <p class="reminder-time">20:00</p>
+                        <p class="reminder-task">Lee un cuento</p>
+                        <p class="reminder-detail">Elige un cuento corto antes de dormir.</p>
+                    </div>
+                    <span class="check-icon" aria-hidden="true"></span>
+                </li>
+            </ul>
+        </section>
+        <section class="completion-message" aria-live="polite" style="display: none;">
+            <p>¡Genial! Terminaste todo por hoy. 🎉</p>
+        </section>
+    </main>
+    <script src="dia.js">
+    </script>
+</body>
+</html>

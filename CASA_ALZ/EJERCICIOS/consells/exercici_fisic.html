@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Exercici Físic</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../consells.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+      <img src="../../../img/liftyanimando.svg" alt="Lifty IA Chat" class="logo-ia" id="iaChatBtn">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <img src="../../../img/corazonapp.svg" alt="Corazón Emocional" class="corazon-img">
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <section class="actividad-section" role="region" aria-label="Exercici Físic">
+      <h2 class="animate-title">Exercici Físic</h2>
+      <div class="instrucciones animate-instrucciones">
+        <p id="instrucciones-texto">Fes una caminada de 10 minuts per millorar la teva memòria. Marca quan ho hagis fet!</p>
+        <button class="instrucciones-btn" onclick="mostrarInstrucciones()">Repetir instruccions</button>
+      </div>
+
+      <div class="actividad-card animate-card">
+        <h3>Has fet la caminada?</h3>
+        <div class="visualizacion-contenedor">
+          <input type="checkbox" id="caminada" class="tarea-checkbox">
+          <label for="caminada">He caminat 10 minuts 🚶</label>
+        </div>
+        <button class="actividad-btn" onclick="completarActividad()">He acabat</button>
+        <div class="mensaje-completado" id="actividad-completado" style="display: none;">
+          <span>Ben fet! L'exercici físic ajuda la teva memòria! 🎉</span>
+        </div>
+      </div>
+
+      <a href="../consells.html" class="volver-btn">Tornar als Consells</a>
+    </section>
+  </main>
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../../AJUSTES/ajustes.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../../PROGRESO/progreso.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../../img/1_estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../../CASA/casa.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../../img/home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../../PERFIL/perfil.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <!-- Script -->
+  <script>
+    const instruccionesTexto = {
+      "exercici-fisic": "Fes una caminada de 10 minuts per millorar la teva memòria. Marca quan ho hagis fet!"
+    };
+
+    function mostrarInstrucciones() {
+      const instrucciones = document.getElementById("instrucciones-texto").textContent;
+      alert(instrucciones);
+      console.log("Instrucciones mostradas:", instrucciones);
+    }
+
+    function completarActividad() {
+      const checkbox = document.getElementById("caminada");
+      const mensajeCompletado = document.getElementById("actividad-completado");
+
+      if (checkbox.checked) {
+        mensajeCompletado.style.display = "block";
+        mensajeCompletado.classList.add("animate-completado");
+        console.log("Actividad completada");
+      } else {
+        alert("Marca la casella abans de continuar!");
+        console.log("Falta marcar la caminada");
+      }
+    }
+
+    function inicializarActividad() {
+      console.log("Mostrando actividad...");
+      const actividadSection = document.querySelector(".actividad-section");
+      if (actividadSection) {
+        actividadSection.style.display = "block";
+        console.log("Sección de actividad mostrada con éxito");
+      }
+
+      const instruccionesElement = document.getElementById("instrucciones-texto");
+      if (instruccionesElement) {
+        instruccionesElement.textContent = instruccionesTexto["exercici-fisic"];
+        console.log("Instrucciones inicializadas:", instruccionesElement.textContent);
+      }
+
+      document.getElementById("caminada").addEventListener("change", () => {
+        const contenedor = document.getElementById("caminada").closest(".visualizacion-contenedor");
+        if (document.getElementById("caminada").checked) {
+          contenedor.classList.add("tarea-completada");
+        } else {
+          contenedor.classList.remove("tarea-completada");
+        }
+      });
+    }
+
+    function inicializarHeaderYNavegacion() {
+      const headerBottom = document.getElementById("headerBottom");
+      const corazonImg = document.querySelector(".corazon-img");
+      headerBottom.addEventListener("click", () => {
+        headerBottom.classList.toggle("expandido");
+      });
+
+      let emocionActual = "feliz";
+      corazonImg.classList.add(emocionActual);
+      const navItems = document.querySelectorAll(".nav-item");
+      const liftyGuia = document.getElementById("liftyGuia");
+
+      navItems.forEach(item => {
+        item.addEventListener("click", () => {
+          navItems.forEach(i => i.classList.remove("activo"));
+          item.classList.add("activo");
+          const rect = item.getBoundingClientRect();
+          liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+          liftyGuia.classList.add("viajar");
+          if (item.dataset.seccion === "progreso") {
+            document.querySelector(".cohete").classList.add("despegar");
+          }
+        });
+      });
+
+      setInterval(() => {
+        const emociones = ["feliz", "ansioso", "triste", "enojado"];
+        emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+        corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+        corazonImg.classList.add(emocionActual);
+      }, 5000);
+
+      const dias = document.querySelectorAll(".dia");
+      dias.forEach(dia => {
+        dia.addEventListener("click", () => {
+          const parentCirculos = dia.closest(".circulos");
+          parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+          dia.classList.add("seleccionado");
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Página cargada, inicializando...");
+      inicializarHeaderYNavegacion();
+      inicializarActividad();
+      console.log("Inicialización completada");
+    });
+  </script>
+</body>
+</html>

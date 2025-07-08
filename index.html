@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Lifty</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+
+  <link rel="icon" sizes="192x192" href="img/icon.png">
+    <link rel="icon" sizes="512x512" href="img/icon.png">
+  <link rel="apple-touch-icon" href="img/icon.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- Video introductorio -->
+  <div class="video-intro" id="videoIntro">
+    <video id="introVideo" autoplay muted playsinline>
+      <source src="img/animacion_liftyfinal.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenido-principal" id="contenidoPrincipal">
+    <!-- Contenedor de estrellas -->
+    <div class="stars-container">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+
+    <div class="container">
+      <!-- Principal -->
+      <section class="mascota">
+        <div class="logo-container">
+          <img src="img/liftycohete.png" alt="Lifty Logo" class="logo-id">
+        </div>
+        <img src="img/lifty2blanco.png" alt="Logo blanc" class="logo-blanco">
+        <p class="slogan">Fem fàcil el que sembla difícil</p>
+        
+        <div class="botones-id">
+          <a href="INICIOSESION/inicio_sesion.html" class="boton inicio">INICIAR SESSIÓ</a>
+          <a href="INICIO/2_Hola/hola.html" class="boton registro">REGISTRA'T</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Script video -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const videoIntro = document.getElementById("videoIntro");
+      const introVideo = document.getElementById("introVideo");
+      const contenidoPrincipal = document.getElementById("contenidoPrincipal");
+      contenidoPrincipal.style.display = "none";
+      videoIntro.style.display = "flex";
+      introVideo.addEventListener("ended", function() {
+        videoIntro.style.display = "none";
+        contenidoPrincipal.style.display = "flex";
+      });
+
+      introVideo.play().catch(function(error) {
+        console.log("Error al intentar reproducir el video automáticamente:", error);
+        videoIntro.style.display = "none";
+        contenidoPrincipal.style.display = "flex";
+      });
+
+      setTimeout(function() {
+        videoIntro.style.display = "none";
+        contenidoPrincipal.style.display = "flex";
+      }, 6000);
+    });
+  </script>
+</body>
+</html>

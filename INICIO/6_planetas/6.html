@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Lifty - Planetes</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <div class="planetes">
+    <section class="layout">
+        <a href="../../CUESTIONARIO/INTELECTUAL/1intelectual.html" class="click">
+          <img src="../../img/intelectual.svg" alt="Intel·lectual">
+          <span class="planet-title">Discapacitat Intel·lectual</span>
+        </a>
+        <a href="../../CUESTIONARIO/ALZHEIMER/1alz.html" class="click">
+          <img src="../../img/alzheimer.svg" alt="Alzheimer">
+          <span class="planet-title">Alzheimer</span>
+        </a>
+        <a href="../../CUESTIONARIO/DOWN/1down.html" class="click sun">
+          <img src="../../img/down.svg" alt="Down">
+          <span class="planet-title">Síndrome de Down</span>
+        </a>
+        <a href="../../CUESTIONARIO/MICROCEFALIA/1micro.html" class="click">
+          <img src="../../img/micro.svg" alt="Saturn">
+          <span class="planet-title">Microcefàlia</span>
+        </a>
+    </section>
+  </div>
+
+  <!-- Script para la animación de giro -->
+  <script>
+    document.querySelectorAll('.click').forEach(planeta => {
+      planeta.addEventListener('click', function(e) {
+        e.preventDefault(); // Evita la navegación inmediata
+        this.classList.add('spin'); // Añade la clase de animación
+        
+        // Navega a la página después de que termine la animación (1s)
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 300); // Cambiado de 500 a 1000 ms
+      });
+    });
+  </script>
+</body>
+</html>

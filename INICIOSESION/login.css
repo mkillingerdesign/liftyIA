@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #2595CD 0%, #0A1D56 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.fondo-estelar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.estrella {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 50%;
+  animation: destellar 3s infinite ease-in-out;
+}
+
+.estrella:nth-child(1) {
+  width: 2px;
+  height: 2px;
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.estrella:nth-child(2) {
+  width: 3px;
+  height: 3px;
+  top: 30%;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+.estrella:nth-child(3) {
+  width: 1px;
+  height: 1px;
+  top: 50%;
+  left: 40%;
+  animation-delay: 0.5s;
+}
+
+.estrella:nth-child(4) {
+  width: 2px;
+  height: 2px;
+  top: 70%;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.estrella:nth-child(5) {
+  width: 3px;
+  height: 3px;
+  top: 90%;
+  left: 80%;
+  animation-delay: 1.5s;
+}
+
+@keyframes destellar {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Contenedor principal */
+.contenedor-login {
+  position: relative;
+  z-index: 2;
+  background: rgba(10, 29, 86, 0.8); 
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: aparecer 1s ease-in-out;
+}
+
+@keyframes aparecer {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Logo de Lifty */
+.logo-login {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: brillo-logo 3s infinite ease-in-out;
+}
+
+@keyframes brillo-logo {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+/* Formulario de inicio de sesión */
+.formulario-login h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.campo label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.campo input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.campo input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.campo input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Botón de inicio de sesión */
+.boton-login {
+  width: 100%;
+  padding: 12px;
+  background: #2595CD;
+  border: none;
+  border-radius: 10px;
+  color: #0A1D56;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-login:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #2595CD;
+}
+
+@keyframes pulsar-boton {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Enlace de registro */
+.registro {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.registro a {
+  color: #2595CD;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.registro a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%); 
+  background-color: #2595CD;
+  transition: width 0.2s ease;
+}
+
+.registro a:hover::after {
+  width: 100%; 
+}
+
+.registro a:hover {
+  color: #638aff;
+}
+
+/* Cohete de Lifty */
+.lifty-cohete {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  bottom: -60px;
+  right: 20px;
+  animation: flotar-cohete 2s infinite ease-in-out;
+}
+
+.lifty-cohete.despegar {
+  animation: despegar-cohete 1.5s ease-in-out forwards;
+}
+
+@keyframes flotar-cohete {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes despegar-cohete {
+  0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+  }
+  50% {
+      transform: translateY(-50px) rotate(45deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100vh) rotate(45deg);
+      opacity: 0;
+  }
+}

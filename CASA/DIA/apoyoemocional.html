@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversació emocional amb Lifty">
+    <title>Suport Emocional</title>
+    <link rel="stylesheet" href="dia.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="../casa.html" class="back-link" aria-label="Tornar a la pàgina principal">
+            <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+            </svg>
+        </a>
+        <h1>Parla amb Lifty</h1>
+    </header>
+    <main>
+        <section class="lifty-container" aria-labelledby="lifty-title">
+            <h2 id="lifty-title" class="visually-hidden">Conversació amb Lifty</h2>
+            <div class="lifty-avatar-wrapper">
+                <img src="../../img/liftylogo.png" alt="Imatge de Lifty" class="lifty-avatar" aria-hidden="true">
+                <p class="lifty-name">Lifty</p>
+            </div>
+            <p class="lifty-message" id="lifty-message" aria-live="polite">Hola! Sóc en Lifty. Com et sents avui?</p>
+            <div class="mic-container">
+                <button class="mic-btn" id="mic-btn" aria-label="Parlar amb Lifty">
+                </button>
+                <p class="mic-status" id="mic-status">Toca per parlar</p>
+            </div>
+            <div class="fallback-options" id="fallback-options" style="display: none;">
+                <p>No puc escoltar. Toca com et sents:</p>
+                <button class="option-btn" data-emotion="happy" aria-label="Estic content">😊 Content</button>
+                <button class="option-btn" data-emotion="sad" aria-label="Estic trist">😢 Trist</button>
+                <button class="option-btn" data-emotion="angry" aria-label="Estic enfadat">😡 Enfadat</button>
+                <button class="option-btn" data-emotion="scared" aria-label="Tinc por">😨 Por</button>
+            </div>
+        </section>
+    </main>
+    <script src="dia.js"></script>
+</body>
+</html>

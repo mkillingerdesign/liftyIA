@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 140.67 140.67">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #4881b4;
+      }
+
+      .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="47.75" y="35.99" width="45.16" height="73.17"/>
+    </clipPath>
+  </defs>
+  <circle id="Elipse_1-2" data-name="Elipse 1-2" class="cls-5" cx="70.33" cy="70.33" r="70.33"/>
+  <g id="micro">
+    <g class="cls-1">
+      <g id="Grupo_1077" data-name="Grupo 1077">
+        <path id="Trazado_1039" data-name="Trazado 1039" class="cls-3" d="M83.45,73.04h3.79v-1.08c.06-.79.69-1.42,1.49-1.47h2.7c.79.05,1.43.68,1.49,1.47v5.41c-.19,11.31-8.54,20.81-19.73,22.45v3.65h11.63c.85.03,1.51.74,1.49,1.58,0,.01,0,.03,0,.04v2.57c0,.82-.67,1.48-1.49,1.49h-28.94c-.82,0-1.48-.67-1.49-1.49v-2.57c-.05-.85.6-1.57,1.45-1.62.01,0,.02,0,.04,0h11.63v-3.65c-11.22-1.58-19.61-11.12-19.74-22.45v-5.41c.06-.79.69-1.42,1.49-1.47h2.57c.84,0,1.55.63,1.63,1.47v1.08h3.79v-24.07c0-7.25,5.87-13.12,13.12-13.12s13.12,5.87,13.12,13.12v24.07Z"/>
+        <path id="Trazado_1040" data-name="Trazado 1040" class="cls-4" d="M70.33,91.44c7.18-.03,13.01-5.8,13.12-12.98v-2.85h3.79v1.76c-.09,9.34-7.74,16.83-17.07,16.74-9.21-.09-16.65-7.53-16.74-16.74v-1.76h3.79v2.84c.06,7.2,5.92,13,13.12,12.99"/>
+      </g>
+    </g>
+  </g>
+</svg>

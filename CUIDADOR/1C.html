@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>L Duo - Registre Cuidador/Familiar</title>
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  <link rel="icon" sizes="192x192" href="../img/icon.png">
+  <link rel="icon" sizes="512x512" href="../img/icon.png">
+  <link rel="apple-touch-icon" href="../img/icon.pngabad">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="1C.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div>
+  </div>
+
+  <div class="container">
+    <section class="mascota">
+      <div class="logo-container">
+      </div>
+      <p class="slogan typing">Registre Cuidador/Familiar</p>
+      <div class="logo-container">
+        <img src="../img/liftyanimando.svg" alt="Lifty" class="lifty-hola">
+      </div>
+      
+      <form class="formulario-registro" id="registroForm">
+        <!-- Información básica -->
+        <div class="grupo-formulario">
+          <label for="nombre">Nom</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="apellidos">Cognoms</label>
+          <input type="text" id="apellidos" name="apellidos" required>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="email">Correu electrònic</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="usuario">Nom d'usuari</label>
+          <input type="text" id="usuario" name="usuario" required>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="contrasena">Contrasenya</label>
+          <input type="password" id="contrasena" name="contrasena" required>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="confirmar_contrasena">Confirmar contrasenya</label>
+          <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+        </div>
+        
+        <!-- Información específica de cuidador -->
+        <div class="grupo-formulario">
+          <label>Quina és la teva relació amb l'usuari?</label>
+          <div class="opciones-relacion">
+            <label class="opcion-radio">
+              <input type="radio" name="relacion" value="familiar" required>
+              <span>Familiar</span>
+            </label>
+            <label class="opcion-radio">
+              <input type="radio" name="relacion" value="cuidador_profesional">
+              <span>Cuidador professional</span>
+            </label>
+            <label class="opcion-radio">
+              <input type="radio" name="relacion" value="otro">
+              <span>Altres</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="grupo-formulario" id="grupo-mail" style="display: none;">
+          <label for="parentesco">Especifica el parentesc</label>
+          <input type="text" id="parentesco" name="parentesco">
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="experiencia">Tens experiència com a cuidador?</label>
+          <select id="experiencia" name="experiencia" required>
+            <option value="" disabled selected>Selecciona una opció</option>
+            <option value="ninguna">Cap experiència</option>
+            <option value="poca">Poca experiència (menys d'1 any)</option>
+            <option value="alguna">Alguna experiència (1-3 anys)</option>
+            <option value="mucha">Molta experiència (més de 3 anys)</option>
+            <option value="profesional">Sóc un professional de la salut</option>
+          </select>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="necesidades">Descriu breument les necessitats de l'usuari que cuidaràs</label>
+          <textarea id="necesidades" name="necesidades" rows="3"></textarea>
+        </div>
+        
+        <div class="grupo-formulario aceptar-terminos">
+          <input type="checkbox" id="terminos" name="terminos" required>
+          <label for="terminos">Accepto els <a href="#">termes i condicions</a> i la <a href="#">política de privacitat</a></label>
+        </div>
+        
+        <div class="botones-formulario">
+          <a href="../CASA_CUIDADOR/fam.html" class="boton continuar">REGISTRAR-ME</a>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    // Mostrar campo de parentesco si es familiar
+    document.querySelectorAll('input[name="relacion"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const grupoParentesco = document.getElementById('grupo-parentesco');
+        if (this.value === 'familiar') {
+          grupoParentesco.style.display = 'block';
+          document.getElementById('parentesco').required = true;
+        } else {
+          grupoParentesco.style.display = 'none';
+          document.getElementById('parentesco').required = false;
+        }
+      });
+    });
+
+    // Validación del formulario
+    document.getElementById('registroForm').addEventListener('submit', function(e) {
+      const contrasena = document.getElementById('contrasena').value;
+      const confirmar = document.getElementById('confirmar_contrasena').value;
+      
+      if (contrasena !== confirmar) {
+        e.preventDefault();
+        alert('Les contrasenyes no coincideixen');
+      }
+    });
+  </script>
+</body>
+</html>

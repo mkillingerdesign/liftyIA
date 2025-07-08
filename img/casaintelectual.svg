@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60.91 54">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #684092;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="60.91" height="54"/>
+    </clipPath>
+  </defs>
+  <g class="cls-1">
+    <g id="Grupo_1184" data-name="Grupo 1184">
+      <path id="Trazado_1143" data-name="Trazado 1143" class="cls-3" d="M53.38,27.14v24.57c0,1.26-1.02,2.29-2.29,2.29h-12.16v-21h-16.95v21h-12.16c-1.26,0-2.29-1.02-2.29-2.29v-24.57L30.46,10.98l22.92,16.16Z"/>
+      <path id="Trazado_1144" data-name="Trazado 1144" class="cls-3" d="M57.37,26.06c-.73,0-1.44-.23-2.04-.65L30.46,7.87,5.58,25.41c-1.61,1.12-3.81.72-4.93-.89-1.11-1.59-.73-3.77.85-4.9L28.42.65c1.22-.86,2.86-.86,4.08,0l26.92,18.98c1.6,1.13,1.98,3.34.85,4.93-.66.94-1.74,1.5-2.9,1.5"/>
+    </g>
+  </g>
+</svg>

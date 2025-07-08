@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title> Cuidador/Familiar</title>
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  <link rel="icon" sizes="192x192" href="../img/icon.png">
+  <link rel="icon" sizes="512x512" href="../img/icon.png">
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fam.css">
+  <link rel="manifest" href="../manifest.json">
+  <!-- Leaflet CSS para el mapa alternativo -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">11 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <svg class="corazon-img" viewBox="0 0 100 100" width="50" height="50">
+            <path class="corazon-path" d="M50 88.87C17.73 70.47 10 52.67 10 37.5a20 20 0 0134.64-13.33L50 30.73l5.36-6.56A20 20 0 0190 37.5c0 15.17-7.73 32.97-40 51.37z" />
+          </svg>
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>8:00</span>
+              <span>10:00</span>
+              <span>14:00</span>
+              <span>17:00</span>
+              <span>20:00</span>
+              <span>22:00</span>
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <div class="quantum-dashboard" id="quantumDashboard">
+      <div class="score-section">
+        <p>Hola! Sóc en Lifty, com puc ajudar-te avui?</p>
+        <div class="score-circle lifty-circle">
+          <div class="lifty-animation"></div>
+        </div>
+      </div>
+
+      <!-- Sección de ubicación -->
+      <div class="stats-section">
+        <div class="stat-card">
+          <div class="icon ubicacion-icon">  <img src="../img/icono.ubi.svg"></div>
+          <p>UBICACIÓ EN TEMPS REAL</p>
+          <p class="status active">Actualitzada</p>
+          <div id="mapa" class="mapa"></div>
+          <p class="info-ubicacion">Última actualització: 18/05/2025 14:51</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../CASA_CUIDADOR/Ajustes/ajustesfam.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../CASA_CUIDADOR/Progreso/progresofam.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../img/1 estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../CASA_CUIDADOR/fam.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../img/Home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../CASA_CUIDADOR/Historial/historialfam.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../CASA_CUIDADOR/Perfil/perfilfam.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <!-- Leaflet JS para el mapa alternativo -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Google Maps API (descomentar si tienes clave) -->
+  <!--
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initGoogleMap"></script>
+  -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Funcionalidad del header
+      const headerBottom = document.getElementById("headerBottom");
+      const corazonImg = document.querySelector(".corazon-img");
+      let emocionActual = "feliz";
+      corazonImg.classList.add(emocionActual);
+
+      headerBottom.addEventListener("click", () => {
+        headerBottom.classList.toggle("expandido");
+      });
+
+      // Animación de emociones
+      setInterval(() => {
+        const emociones = ["feliz", "ansioso", "triste", "enojado"];
+        emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+        corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+        corazonImg.classList.add(emocionActual);
+      }, 5000);
+
+      // Navegación
+      const navItems = document.querySelectorAll(".nav-item");
+      const liftyGuia = document.getElementById("liftyGuia");
+
+      navItems.forEach(item => {
+        item.addEventListener("click", () => {
+          navItems.forEach(i => i.classList.remove("activo"));
+          item.classList.add("activo");
+          const rect = item.getBoundingClientRect();
+          liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+          liftyGuia.classList.add("viajar");
+          if (item.dataset.seccion === "progreso") {
+            document.querySelector(".cohete").classList.add("despegar");
+          }
+        });
+      });
+
+      // Barras de sonido para Lifty
+      const liftyCircle = document.querySelector(".score-circle.lifty-circle");
+      let isActive = false;
+      const voiceWaves = document.createElement("div");
+      voiceWaves.className = "voice-waves";
+      for (let i = 0; i < 5; i++) {
+        const wave = document.createElement("div");
+        wave.className = "wave";
+        voiceWaves.appendChild(wave);
+      }
+      liftyCircle.appendChild(voiceWaves);
+      const waves = voiceWaves.querySelectorAll(".wave");
+
+      liftyCircle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        liftyCircle.classList.add("clicked");
+        isActive = !isActive;
+        if (isActive) {
+          liftyCircle.classList.add("listening");
+          waves.forEach(wave => wave.classList.add("active"));
+        } else {
+          liftyCircle.classList.remove("listening");
+          waves.forEach(wave => wave.classList.remove("active"));
+        }
+        setTimeout(() => liftyCircle.classList.remove("clicked"), 1000);
+      });
+
+      // Inicializar mapa con Leaflet (alternativa sin clave de API)
+      const map = L.map('mapa').setView([41.3851, 2.1734], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      const markerIcon = L.icon({
+        iconUrl: '../img/liftycohete.png',
+        iconSize: [30, 30],
+        iconAnchor: [15, 30]
+      });
+
+      const marker = L.marker([41.3851, 2.1734], { icon: markerIcon }).addTo(map);
+      marker.bindPopup("Ubicació de l'usuari").openPopup();
+
+      // Simular movimiento cada 10 segundos
+      setInterval(() => {
+        const newLat = marker.getLatLng().lat + (Math.random() - 0.5) * 0.001;
+        const newLng = marker.getLatLng().lng + (Math.random() - 0.5) * 0.001;
+        marker.setLatLng([newLat, newLng]);
+        map.panTo([newLat, newLng]);
+        const now = new Date();
+        document.querySelector(".info-ubicacion").textContent = `Última actualització: ${now.toLocaleDateString('ca-ES')} ${now.toLocaleTimeString('ca-ES')}`;
+      }, 10000);
+
+      // Google Maps (descomentar y configurar si tienes clave)
+      /*
+      window.initGoogleMap = function() {
+        const map = new google.maps.Map(document.getElementById("mapa"), {
+          center: { lat: 41.3851, lng: 2.1734 },
+          zoom: 15,
+          styles: [
+            { featureType: "all", elementType: "labels", stylers: [{ visibility: "on" }] },
+            { featureType: "road", elementType: "all", stylers: [{ saturation: -30 }] },
+            { featureType: "water", elementType: "all", stylers: [{ color: "#E6F0FA" }] }
+          ]
+        });
+
+        const marker = new google.maps.Marker({
+          position: { lat: 41.3851, lng: 2.1734 },
+          map: map,
+          title: "Ubicació de l'usuari",
+          icon: {
+            url: "../img/liftycohete.png",
+            scaledSize: new google.maps.Size(30, 30)
+          }
+        });
+
+        setInterval(() => {
+          const newLat = marker.getPosition().lat() + (Math.random() - 0.5) * 0.001;
+          const newLng = marker.getPosition().lng() + (Math.random() - 0.5) * 0.001;
+          const newPos = { lat: newLat, lng: newLng };
+          marker.setPosition(newPos);
+          map.panTo(newPos);
+          const now = new Date();
+          document.querySelector(".info-ubicacion").textContent = `Última actualització: ${now.toLocaleDateString('ca-ES')} ${now.toLocaleTimeString('ca-ES')}`;
+        }, 10000);
+      };
+      */
+    });
+  </script>
+</body>
+</html>

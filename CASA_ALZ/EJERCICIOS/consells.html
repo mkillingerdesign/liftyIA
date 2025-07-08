@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Consells per a la Memòria</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="consells.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+      <img src="../../img/liftyanimando.svg" alt="Lifty IA Chat" class="logo-ia" id="iaChatBtn">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <img src="../../img/corazonapp.svg" alt="Corazón Emocional" class="corazon-img">
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal: Consejos para la Memoria -->
+  <main class="contenido">
+    <section class="consejos-section" role="region" aria-label="Consells per a la Memòria">
+      <h2 class="animate-title">Consells per a la Memòria</h2>
+      <div class="instrucciones animate-instrucciones">
+        <p id="instrucciones-texto">Aquí tens consells senzills per exercitar la teva memòria cada dia. Prova'ls i veuràs com millores! Lifty t'acompanya!</p>
+        <button class="instrucciones-btn" onclick="mostrarInstrucciones()">Repetir instruccions</button>
+      </div>
+
+      <div class="consejos-lista">
+        <!-- Consejo 1 -->
+        <div class="consejo-card animate-card">
+          <h3>Juga a jocs de memòria</h3>
+          <p>Prova jocs com trobar parelles o recordar seqüències. Són divertits i ajuden a mantenir la ment activa.</p>
+          <span class="consejo-img">🃏</span>
+          <a href="consells/jocs_memoria.html" class="consejo-btn">Provar-ho</a>
+        </div>
+
+        <!-- Consejo 2 -->
+        <div class="consejo-card animate-card">
+          <h3>Fes llistes visuals</h3>
+          <p>Escriu llistes amb colors o dibuixos. Això ajuda a recordar millor les tasques o compres.</p>
+          <span class="consejo-img">📝</span>
+          <a href="consells/llistes_visuals.html" class="consejo-btn">Provar-ho</a>
+        </div>
+
+        <!-- Consejo 3 -->
+        <div class="consejo-card animate-card">
+          <h3>Associa idees</h3>
+          <p>Quan vulguis recordar alguna cosa, associa-la amb una imatge o història divertida.</p>
+          <span class="consejo-img">💡</span>
+          <a href="consells/associa_idees.html" class="consejo-btn">Provar-ho</a>
+        </div>
+
+        <!-- Consejo 4 -->
+        <div class="consejo-card animate-card">
+          <h3>Repeteix en veu alta</h3>
+          <p>Quan aprenguis alguna cosa nova, repeteix-la en veu alta unes quantes vegades.</p>
+          <span class="consejo-img">🗣️</span>
+          <a href="consells/repeteix_veu_alta.html" class="consejo-btn">Provar-ho</a>
+        </div>
+
+        <!-- Consejo 5 -->
+        <div class="consejo-card animate-card">
+          <h3>Fes exercici físic</h3>
+          <p>Una caminada diària millora la circulació i manté el cervell actiu.</p>
+          <span class="consejo-img">🚶</span>
+          <a href="consells/exercici_fisic.html" class="consejo-btn">Provar-ho</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../AJUSTES/ajustes.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../PROGRESO/progreso.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../img/1_estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../CASA/casa.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../img/home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../PERFIL/perfil.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <!-- Script -->
+  <script>
+    // Gestión de los consejos
+    const instruccionesTexto = {
+      "consejos-memoria": "Aquí tens consells senzills per exercitar la teva memòria cada dia. Prova'ls i veuràs com millores! Lifty t'acompanya!"
+    };
+
+    function mostrarInstrucciones() {
+      const instrucciones = document.getElementById("instrucciones-texto").textContent;
+      alert(instrucciones);
+      console.log("Instrucciones mostradas:", instrucciones);
+    }
+
+    function inicializarConsejos() {
+      console.log("Mostrando consejos para la memoria...");
+      const consejosSection = document.querySelector(".consejos-section");
+      if (consejosSection) {
+        consejosSection.style.display = "block";
+        console.log("Sección de consejos mostrada con éxito");
+      } else {
+        console.error("No se encontró la sección de consejos");
+      }
+
+      // Mostrar instrucciones
+      const instruccionesElement = document.getElementById("instrucciones-texto");
+      if (instruccionesElement) {
+        instruccionesElement.textContent = instruccionesTexto["consejos-memoria"];
+        console.log("Instrucciones inicializadas:", instruccionesElement.textContent);
+      } else {
+        console.error("No se encontró el elemento instrucciones-texto");
+      }
+    }
+
+    // Script del header y navegación
+    function inicializarHeaderYNavegacion() {
+      const headerBottom = document.getElementById("headerBottom");
+      const corazonImg = document.querySelector(".corazon-img");
+      headerBottom.addEventListener("click", () => {
+        headerBottom.classList.toggle("expandido");
+      });
+
+      let emocionActual = "feliz";
+      corazonImg.classList.add(emocionActual);
+      const navItems = document.querySelectorAll(".nav-item");
+      const liftyGuia = document.getElementById("liftyGuia");
+
+      navItems.forEach(item => {
+        item.addEventListener("click", () => {
+          navItems.forEach(i => i.classList.remove("activo"));
+          item.classList.add("activo");
+          const rect = item.getBoundingClientRect();
+          liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+          liftyGuia.classList.add("viajar");
+          if (item.dataset.seccion === "progreso") {
+            document.querySelector(".cohete").classList.add("despegar");
+          }
+        });
+      });
+
+      setInterval(() => {
+        const emociones = ["feliz", "ansioso", "triste", "enojado"];
+        emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+        corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+        corazonImg.classList.add(emocionActual);
+      }, 5000);
+
+      const dias = document.querySelectorAll(".dia");
+      dias.forEach(dia => {
+        dia.addEventListener("click", () => {
+          const parentCirculos = dia.closest(".circulos");
+          parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+          dia.classList.add("seleccionado");
+        });
+      });
+    }
+
+    // Inicializar todo al cargar la página
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Página cargada, inicializando...");
+      inicializarHeaderYNavegacion();
+      inicializarConsejos();
+      console.log("Inicialización completada");
+    });
+  </script>
+</body>
+</html>

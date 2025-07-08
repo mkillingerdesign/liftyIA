@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Lifty - ALZHEIMER</title>
+
+  <meta name="theme-color" content="#919191">
+  <meta name="msapplication-navbutton-color" content="#919191">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#919191">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../CUESTIONARIO/ALZHEIMER/opciones.css">
+</head>
+<body>
+  
+  <!-- Encabezado con el logo y el número de pregunta, fuera del contenedor blanco -->
+  <header class="encabezado">
+    <a href="../../CUESTIONARIO/ALZHEIMER/10alz.html" class="flecha-atras">
+      <img src="../../img/FLECHAS.svg" alt="Tornar enrere">
+    </a>
+    <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    <span class="numero-pregunta">11</span>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="contenedor">
+    <!-- Sección de estrellas y datos básicos -->
+    <section class="seccion-estrellas">
+      <div class="estrellas">
+        <img src="../../img/estrellas11.svg" alt="Estrella">
+      </div>
+      <p class="etiqueta-datos">Dades específiques</p>
+    </section>
+
+    <!-- Sección de la pregunta y la mascota -->
+    <section class="seccion-pregunta">
+      <h2 class="pregunta">Quina situació <br>et costa més?</h2>
+      <div class="mascota">
+        <img src="../../img/Liftyalzheimer.svg" alt="Mascota">
+      </div>
+    </section>
+
+    <!-- Sección de las opciones de respuesta (los 3 cuadrados) -->
+    <section class="seccion-opciones">
+      <div class="opcion">
+        <img src="../../img/casaalzheimer.svg" alt="Sol">
+        <p>Casa</p>
+      </div>
+      <div class="opcion">
+        <img src="../../img/afueraalzheimer.svg" alt="Poques persones">
+        <p>Fora</p>
+      </div>
+      <div class="opcion">
+        <img src="../../img/trabajoalzheimer.svg" alt="Molta gent">
+        <p>Treball</p>
+      </div>
+    </section>
+  </div>
+  </button>
+  
+  <!-- Botón de siguiente con id para JavaScript -->
+  <a href="../../CUESTIONARIO/ALZHEIMER/12alz.html" class="boton-siguiente" id="boton-siguiente">SEGÜENT</a>
+
+  <!-- Script para activar las animaciones -->
+  <script>
+    const botonMicrofono = document.getElementById("boton-microfono");
+    const botonSiguiente = document.getElementById("boton-siguiente");
+    const opciones = document.querySelectorAll(".opcion");
+    let estaEscuchando = false;
+
+    // Animación del micrófono
+    botonMicrofono.addEventListener("click", () => {
+      if (!estaEscuchando) {
+        // Añadimos la clase de animación al hacer clic
+        botonMicrofono.classList.add("pulsar");
+        estaEscuchando = true;
+      } else {
+        // Quitamos la clase de animación al detener
+        botonMicrofono.classList.remove("pulsar");
+        estaEscuchando = false;
+      }
+    });
+
+    // Animación del botón de siguiente
+    botonSiguiente.addEventListener("click", (event) => {
+      // Prevenimos la navegación inmediata para que se vea la animación
+      event.preventDefault();
+      // Añadimos la clase de animación al hacer clic
+      botonSiguiente.classList.add("escalar");
+      // Navegamos a la siguiente página después de la animación (500ms)
+      setTimeout(() => {
+        window.location.href = botonSiguiente.href;
+      }, 500);
+    });
+
+    // Manejo del clic en las opciones
+    opciones.forEach(opcion => {
+      opcion.addEventListener("click", () => {
+        // Quitamos la clase "seleccionada" de todas las opciones
+        opciones.forEach(opt => opt.classList.remove("seleccionada"));
+        // Añadimos la clase "seleccionada" a la opción clicada
+        opcion.classList.add("seleccionada");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Activitats Guiades</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="guias.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+      <img src="../../img/liftyanimando.svg" alt="Lifty IA Chat" class="logo-ia" id="iaChatBtn">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <img src="../../img/corazonapp.svg" alt="Corazón Emocional" class="corazon-img">
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal: Actividades Guiadas -->
+  <main class="contenido">
+    <section class="actividades-guiadas-section" role="region" aria-label="Activitats Guiades">
+      <h2 class="animate-title">Rutinas Diàries</h2>
+      <div class="instrucciones animate-instrucciones">
+        <p id="instrucciones-texto">Segueix les activitats per organitzar el teu dia. Marca les tasques, segueix els passos, pren la medicació i repassa el dia. Lifty t'acompanya!</p>
+        <button class="instrucciones-btn" onclick="mostrarInstrucciones()">Repetir instruccions</button>
+      </div>
+
+      <div class="actividad-card animate-card">
+        <!-- 1. Planificación de la jornada -->
+        <div class="seccion-actividad">
+          <h3>Planificació del Dia</h3>
+          <p>Marca les tasques que has fet:</p>
+          <ul class="tareas-lista">
+            <li>
+              <input type="checkbox" id="tarea1" class="tarea-checkbox">
+              <label for="tarea1">Levantar-se</label>
+              <span class="tarea-img">🛏️</span>
+            </li>
+            <li>
+              <input type="checkbox" id="tarea2" class="tarea-checkbox">
+              <label for="tarea2">Menjar</label>
+              <span class="tarea-img">🍽️</span>
+            </li>
+            <li>
+              <input type="checkbox" id="tarea3" class="tarea-checkbox">
+              <label for="tarea3">Anar a dormir</label>
+              <span class="tarea-img">😴</span>
+            </li>
+          </ul>
+          <div class="mensaje-completado" id="planificacion-completado" style="display: none;">
+            <span>Ben fet! Has completat la planificació! 🎉</span>
+          </div>
+        </div>
+
+        <!-- 2. Guía paso a paso para tareas domésticas -->
+        <div class="seccion-actividad">
+          <h3>Preparar un Vas d'Aigua</h3>
+          <p>Segueix els passos:</p>
+          <ol class="pasos-lista">
+            <li>Agafa un vas net. <span class="paso-img">🥛</span></li>
+            <li>Omple'l d'aigua del grifo. <span class="paso-img">💧</span></li>
+            <li>Beu l'aigua amb calma. <span class="paso-img">🚰</span></li>
+          </ol>
+          <button class="actividad-btn" onclick="completarTareaDomestica()">He acabat</button>
+          <div class="mensaje-completado" id="domestica-completado" style="display: none;">
+            <span>Ben fet! Has preparat el vas d'aigua! 🎉</span>
+          </div>
+        </div>
+
+        <!-- 3. Control de medicación -->
+        <div class="seccion-actividad">
+          <h3>Prendre la Medicació</h3>
+          <p>Marca quan hagis pres la medicació:</p>
+          <div class="medicacion-contenedor">
+            <input type="checkbox" id="medicacion" class="tarea-checkbox">
+            <label for="medicacion">He pres la medicació</label>
+            <span class="tarea-img">💊</span>
+          </div>
+          <div class="mensaje-completado" id="medicacion-completado" style="display: none;">
+            <span>Ben fet! Has pres la medicació! 🎉</span>
+          </div>
+        </div>
+
+        <!-- 4. Revisión del día -->
+        <div class="seccion-actividad">
+          <h3>Repàs del Dia</h3>
+          <p>Respon aquestes preguntes:</p>
+          <div class="revision-contenedor">
+            <p>T’has sentit bé avui?</p>
+            <label><input type="radio" name="pregunta1" value="si"> Sí</label>
+            <label><input type="radio" name="pregunta1" value="no"> No</label>
+            <p>Has passejat?</p>
+            <label><input type="radio" name="pregunta2" value="si"> Sí</label>
+            <label><input type="radio" name="pregunta2" value="no"> No</label>
+          </div>
+          <button class="actividad-btn" onclick="completarRevision()">Enviar</button>
+          <div class="mensaje-completado" id="revision-completado" style="display: none;">
+            <span>Gràcies per compartir! Has repassat el dia! 🎉</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../AJUSTES/ajustes.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../PROGRESO/progreso.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../img/1_estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../CASA/casa.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../img/home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../PERFIL/perfil.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <!-- Script -->
+  <script>
+    // Gestión de la actividad guiada
+    const instruccionesTexto = {
+      "actividades-guiadas": "Segueix les activitats per organitzar el teu dia. Marca les tasques, segueix els passos, pren la medicació i repassa el dia. Lifty t'acompanya!"
+    };
+
+    function mostrarInstrucciones() {
+      const instrucciones = document.getElementById("instrucciones-texto").textContent;
+      alert(instrucciones);
+      console.log("Instrucciones mostradas:", instrucciones);
+    }
+
+    function completarPlanificacion() {
+      const checkboxes = document.querySelectorAll(".tareas-lista .tarea-checkbox");
+      const mensajeCompletado = document.getElementById("planificacion-completado");
+      const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+
+      if (allChecked) {
+        mensajeCompletado.style.display = "block";
+        mensajeCompletado.classList.add("animate-completado");
+        console.log("Planificación completada");
+      }
+    }
+
+    function completarTareaDomestica() {
+      const mensajeCompletado = document.getElementById("domestica-completado");
+      mensajeCompletado.style.display = "block";
+      mensajeCompletado.classList.add("animate-completado");
+      console.log("Tarea doméstica completada");
+    }
+
+    function completarMedicacion() {
+      const checkbox = document.getElementById("medicacion");
+      const mensajeCompletado = document.getElementById("medicacion-completado");
+
+      if (checkbox.checked) {
+        mensajeCompletado.style.display = "block";
+        mensajeCompletado.classList.add("animate-completado");
+        console.log("Medicación completada");
+      }
+    }
+
+    function completarRevision() {
+      const pregunta1 = document.querySelector("input[name='pregunta1']:checked");
+      const pregunta2 = document.querySelector("input[name='pregunta2']:checked");
+      const mensajeCompletado = document.getElementById("revision-completado");
+
+      if (pregunta1 && pregunta2) {
+        mensajeCompletado.style.display = "block";
+        mensajeCompletado.classList.add("animate-completado");
+        console.log("Revisión del día completada");
+      } else {
+        alert("Si us plau, respon totes les preguntes.");
+        console.log("Faltan respuestas en la revisión");
+      }
+    }
+
+    function inicializarActividades() {
+      console.log("Mostrando actividad guiada...");
+      const actividadesSection = document.querySelector(".actividades-guiadas-section");
+      if (actividadesSection) {
+        actividadesSection.style.display = "block";
+        console.log("Sección de actividad mostrada con éxito");
+      } else {
+        console.error("No se encontró la sección de actividades guiadas");
+      }
+
+      // Mostrar instrucciones
+      const instruccionesElement = document.getElementById("instrucciones-texto");
+      if (instruccionesElement) {
+        instruccionesElement.textContent = instruccionesTexto["actividades-guiadas"];
+        console.log("Instrucciones inicializadas:", instruccionesElement.textContent);
+      } else {
+        console.error("No se encontró el elemento instrucciones-texto");
+      }
+
+      // Añadir eventos a los checkboxes
+      document.querySelectorAll(".tareas-lista .tarea-checkbox").forEach(checkbox => {
+        checkbox.addEventListener("change", completarPlanificacion);
+        checkbox.addEventListener("change", () => {
+          const li = checkbox.closest("li");
+          if (checkbox.checked) {
+            li.classList.add("tarea-completada");
+          } else {
+            li.classList.remove("tarea-completada");
+          }
+        });
+      });
+
+      document.getElementById("medicacion").addEventListener("change", completarMedicacion);
+      document.getElementById("medicacion").addEventListener("change", () => {
+        const contenedor = document.getElementById("medicacion").closest(".medicacion-contenedor");
+        if (document.getElementById("medicacion").checked) {
+          contenedor.classList.add("tarea-completada");
+        } else {
+          contenedor.classList.remove("tarea-completada");
+        }
+      });
+    }
+
+    // Script del header y navegación
+    function inicializarHeaderYNavegacion() {
+      const headerBottom = document.getElementById("headerBottom");
+      const corazonImg = document.querySelector(".corazon-img");
+      headerBottom.addEventListener("click", () => {
+        headerBottom.classList.toggle("expandido");
+      });
+
+      let emocionActual = "feliz";
+      corazonImg.classList.add(emocionActual);
+      const navItems = document.querySelectorAll(".nav-item");
+      const liftyGuia = document.getElementById("liftyGuia");
+
+      navItems.forEach(item => {
+        item.addEventListener("click", () => {
+          navItems.forEach(i => i.classList.remove("activo"));
+          item.classList.add("activo");
+          const rect = item.getBoundingClientRect();
+          liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+          liftyGuia.classList.add("viajar");
+          if (item.dataset.seccion === "progreso") {
+            document.querySelector(".cohete").classList.add("despegar");
+          }
+        });
+      });
+
+      setInterval(() => {
+        const emociones = ["feliz", "ansioso", "triste", "enojado"];
+        emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+        corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+        corazonImg.classList.add(emocionActual);
+      }, 5000);
+
+      const dias = document.querySelectorAll(".dia");
+      dias.forEach(dia => {
+        dia.addEventListener("click", () => {
+          const parentCirculos = dia.closest(".circulos");
+          parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+          dia.classList.add("seleccionado");
+        });
+      });
+    }
+
+    // Inicializar todo al cargar la página
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Página cargada, inicializando...");
+      inicializarHeaderYNavegacion();
+      inicializarActividades();
+      console.log("Inicialización completada");
+    });
+  </script>
+</body>
+</html>

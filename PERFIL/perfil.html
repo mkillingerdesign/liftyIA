@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  
+  <title>Lifty - Perfil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <svg class="corazon-img" viewBox="0 0 100 100" width="50" height="50">
+            <path class="corazon-path" d="M50 88.87C17.73 70.47 10 52.67 10 37.5a20 20 0 0134.64-13.33L50 30.73l5.36-6.56A20 20 0 0190 37.5c0 15.17-7.73 32.97-40 51.37z" />
+          </svg>
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>8:00</span>
+              <span>10:00</span>
+              <span>14:00</span>
+              <span>17:00</span>
+              <span>20:00</span>
+              <span>22:00</span>
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <img src="../img/corazonapp.svg" alt="Corazón Emocional" class="corazon-img">
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenido">
+    <div class="perfil-container">
+      <!-- Foto de perfil -->
+      <div class="foto-perfil">
+        <img src="../PERFIL/img/perfil.svg" alt="Foto de Perfil" id="avatarActual">
+        <button class="editar-avatar" id="editarAvatar">Editar</button>
+      </div>
+      <div class="nombre-usuario">
+        <h2>Joan Garcia</h2>
+      </div>
+
+      <!-- Modal para elegir avatar -->
+      <div class="modal-avatars" id="modalAvatars" style="display: none;">
+        <div class="modal-content">
+          <h3>Tria el teu avatar</h3>
+          <div class="avatars">
+            <img src="../PERFIL/img/alien.svg" alt="Astronauta 1" class="avatar-opcion" data-avatar="astronauta1.png">
+            <img src="../PERFIL/img/avatar.svg" alt="Astronauta 2" class="avatar-opcion" data-avatar="astronauta2.png">
+            <img src="../PERFIL/img/perro.svg" alt="Astronauta 3" class="avatar-opcion" data-avatar="astronauta3.png">
+          </div>
+          <button class="cerrar-modal" id="cerrarModal">Tancar</button>
+        </div>
+      </div>
+
+      <!-- Pestañas creativas -->
+      <div class="pestanas">
+        <button class="pestana activa" data-seccion="info-personal">🚀 Informació personal</button>
+        <button class="pestana" data-seccion="necesidades">🌌 Les meves necessitats i ajustos</button>
+        <button class="pestana" data-seccion="personalizacion">🪐 Personalitzar foto</button>
+        <button class="pestana" data-seccion="cerrar-sesion">🌠 Tancar sessió</button>
+        <button class="pestana" data-seccion="vincular">🛰️ Vincular dispositius</button>
+      </div>
+
+      <!-- Contenido de las pestañas -->
+      <div class="seccion-perfil" id="info-personal">
+        <h2>🚀 Informació personal</h2>
+        <p>Nom: Joan Garcia</p>
+        <p>Email: joan@example.com</p>
+        <p>Data de naixement: 15/03/1995</p>
+      </div>
+
+      <div class="seccion-perfil" id="necesidades" style="display: none;">
+        <h2>🌌 Les meves necessitats i ajustos</h2>
+        <p>Preferència de notificacions: Silencioses</p>
+        <p>Necessitat especial: Text gran</p>
+        <button class="btn-ajuste">Editar ajustos</button>
+      </div>
+
+      <div class="seccion-perfil" id="personalizacion" style="display: none;">
+        <h2>🪐 Personalitzar foto</h2>
+        <p>Selecciona un avatar o puja una foto personalitzada:</p>
+        <button class="btn-personalizar" id="abrirModal">Canviar avatar</button>
+      </div>
+
+      <div class="seccion-perfil" id="cerrar-sesion" style="display: none;">
+        <h2>🌠 Tancar sessió</h2>
+        <p>Segur que vols tancar sessió?</p>
+        <button class="btn-cerrar">Tancar sessió</button>
+      </div>
+
+      <div class="seccion-perfil" id="vincular" style="display: none;">
+        <h2>🛰️ Vincular dispositius</h2>
+        <p>Connecta els teus dispositius externs:</p>
+        <button class="btn-vincular">Vincular nou dispositiu</button>
+      </div>
+    </div>
+
+    <!-- Chat IA -->
+    <div class="chat-tab" id="iaChatTab">
+      <div class="chat-header">
+        <h2>Chat amb Lifty</h2>
+        <button class="close-btn" id="closeIaChat">X</button>
+      </div>
+      <div class="chat-body" id="iaChatBody">
+        <div class="mensaje lifty">Hola! Com et puc ajudar amb el teu perfil?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="iaUserInput" placeholder="Escriu aquí...">
+        <button id="iaSendMessage">Enviar</button>
+        <button id="iaVoiceBtn">🎙️</button>
+      </div>
+    </div>
+  </main>
+
+    <!-- Navegación -->
+    <nav class="navegacion-moderna">
+      <a href="../AJUSTES/ajustes.html" class="nav-item casa" data-seccion="casa">
+        <div class="nav-icon">
+          <img src="../img/settings.svg" alt="Ajustes">
+        </div>
+        <span class="nav-label">Configuració</span>
+      </a>
+      <a href="../PROGRESO/progreso.html" class="nav-item config" data-seccion="config">
+        <div class="nav-icon">
+          <img src="../img/1 estrella.svg" alt="Progreso">
+        </div>
+        <span class="nav-label">Progrès</span>
+      </a>
+      <a href="../CASA/casa.html" class="nav-item progreso" data-seccion="progreso">
+        <div class="nav-icon">
+          <img src="../img/Home.svg" alt="Casa">
+        </div>
+        <span class="nav-label">Casa</span>
+      </a>
+      <a href="../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+        <div class="nav-icon">
+          <img src="../img/historial.svg" alt="Historial">
+        </div>
+        <span class="nav-label">Historial</span>
+      </a>
+      <a href="../PERFIL/perfil.html" class="nav-item perfil" data-seccion="perfil">
+        <div class="nav-icon">
+          <img src="../img/perfil.svg" alt="Perfil">
+        </div>
+        <span class="nav-label">Perfil</span>
+      </a>
+      <img src="../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+    </nav>
+
+  <script>
+    // Animación del header-bottom
+    const headerBottom = document.getElementById("headerBottom");
+    const corazonImg = document.querySelector(".corazon-img");
+    headerBottom.addEventListener("click", () => {
+      headerBottom.classList.toggle("expandido");
+    });
+
+    // Corazón emocional (simulación de emociones)
+    let emocionActual = "feliz";
+    corazonImg.classList.add(emocionActual);
+    setInterval(() => {
+      const emociones = ["feliz", "ansioso", "triste", "enojado"];
+      emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+      corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+      corazonImg.classList.add(emocionActual);
+    }, 5000);
+
+    // Navegación moderna
+    const navItems = document.querySelectorAll(".nav-item");
+    const liftyGuia = document.getElementById("liftyGuia");
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        navItems.forEach(i => i.classList.remove("activo"));
+        item.classList.add("activo");
+        const rect = item.getBoundingClientRect();
+        liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+        liftyGuia.classList.add("viajar");
+        if (item.dataset.seccion === "casa") window.location.href = "../CASA/casa.html";
+        if (item.dataset.seccion === "config") window.location.href = "ajustes.html";
+        if (item.dataset.seccion === "progreso") window.location.href = "progreso.html";
+        if (item.dataset.seccion === "historial") window.location.href = "historial.html";
+      });
+    });
+
+    // Interactividad de los días
+    const dias = document.querySelectorAll(".dia");
+    dias.forEach(dia => {
+      dia.addEventListener("click", () => {
+        const parentCirculos = dia.closest(".circulos");
+        parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+        dia.classList.add("seleccionado");
+      });
+    });
+
+    // Chat IA
+    const iaChatBtn = document.getElementById("iaChatBtn");
+    const iaChatTab = document.getElementById("iaChatTab");
+    const closeIaChat = document.getElementById("closeIaChat");
+    const iaSendMessage = document.getElementById("iaSendMessage");
+    const iaUserInput = document.getElementById("iaUserInput");
+    const iaChatBody = document.getElementById("iaChatBody");
+    const iaVoiceBtn = document.getElementById("iaVoiceBtn");
+
+    function adjustChatTabSize() {
+      iaChatTab.style.top = `0px`;
+      iaChatTab.style.height = `100vh`;
+    }
+
+    window.addEventListener("load", adjustChatTabSize);
+    window.addEventListener("resize", adjustChatTabSize);
+
+    iaChatBtn.addEventListener("click", () => {
+      iaChatTab.style.display = "block";
+      adjustChatTabSize();
+    });
+
+    closeIaChat.addEventListener("click", () => {
+      iaChatTab.style.display = "none";
+    });
+
+    iaSendMessage.addEventListener("click", sendIaMessage);
+    iaUserInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendIaMessage();
+    });
+
+    function sendIaMessage() {
+      const message = iaUserInput.value.trim();
+      if (message) {
+        const userMsg = document.createElement("div");
+        userMsg.classList.add("mensaje", "usuario");
+        userMsg.textContent = message;
+        iaChatBody.appendChild(userMsg);
+        iaUserInput.value = "";
+        setTimeout(() => {
+          const iaMsg = document.createElement("div");
+          iaMsg.classList.add("mensaje", "lifty");
+          iaMsg.textContent = "Aquesta és una resposta simulada!";
+          iaChatBody.appendChild(iaMsg);
+          iaChatBody.scrollTop = iaChatBody.scrollHeight;
+        }, 1000);
+      }
+    }
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "ca-ES";
+    recognition.continuous = false;
+
+    iaVoiceBtn.addEventListener("click", () => {
+      recognition.start();
+      iaVoiceBtn.style.background = "#FF5E62";
+    });
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      iaUserInput.value = transcript;
+      sendIaMessage();
+    };
+
+    recognition.onend = () => {
+      iaVoiceBtn.style.background = "";
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Error en el reconeixement de veu:", event.error);
+    };
+
+    // Pestañas Perfil
+    const pestanas = document.querySelectorAll(".pestana");
+    const secciones = document.querySelectorAll(".seccion-perfil");
+    pestanas.forEach(pestana => {
+      pestana.addEventListener("click", () => {
+        pestanas.forEach(p => p.classList.remove("activa"));
+        pestana.classList.add("activa");
+        secciones.forEach(s => s.style.display = "none");
+        document.getElementById(pestana.dataset.seccion).style.display = "block";
+      });
+    });
+
+    // Modal para avatares
+    const editarAvatar = document.getElementById("editarAvatar");
+    const abrirModal = document.getElementById("abrirModal");
+    const modalAvatars = document.getElementById("modalAvatars");
+    const cerrarModal = document.getElementById("cerrarModal");
+    const avatarActual = document.getElementById("avatarActual");
+    const avatarOpciones = document.querySelectorAll(".avatar-opcion");
+
+    editarAvatar.addEventListener("click", () => {
+      modalAvatars.style.display = "block";
+    });
+
+    abrirModal.addEventListener("click", () => {
+      modalAvatars.style.display = "block";
+    });
+
+    cerrarModal.addEventListener("click", () => {
+      modalAvatars.style.display = "none";
+    });
+
+    avatarOpciones.forEach(opcion => {
+      opcion.addEventListener("click", () => {
+        const nuevoAvatar = opcion.dataset.avatar;
+        avatarActual.src = `../img/${nuevoAvatar}`;
+        modalAvatars.style.display = "none";
+      });
+    });
+
+    // Botones simulados
+    document.querySelector(".btn-ajuste").addEventListener("click", () => {
+      alert("Editant ajustos personals...");
+    });
+
+    document.querySelector(".btn-cerrar").addEventListener("click", () => {
+      alert("Sessió tancada.");
+    });
+
+    document.querySelector(".btn-vincular").addEventListener("click", () => {
+      alert("Vinculant dispositiu extern...");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Lifty - Inici de Sessió</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+
+  <div class="fondo-estelar">
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+  </div>
+
+  <!-- Contenedor principal -->
+  <main class="contenedor-login">
+    <!-- Formulario de inicio de sesión -->
+    <form class="formulario-login">
+      <h1>INICI DE SESSIÓ</h1>
+      <div class="campo">
+        <label for="email">Correu electrònic</label>
+        <input type="email" id="email" name="email" placeholder="exemple@correu.com" required>
+      </div>
+      <div class="campo">
+        <label for="password">Contrasenya</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="boton-login">Iniciar sessió</button>
+      <p class="registro">No tens compte? <a href="../INICIO/2_Hola/hola.html">Registra't</a></p>
+    </form>
+
+    <img src="liftycohete.png" alt="Lifty Cohete" class="lifty-cohete">
+  </main>
+
+  <!-- Script para animaciones -->
+  <script>
+    const botonLogin = document.querySelector(".boton-login");
+    const liftyCohete = document.querySelector(".lifty-cohete");
+  
+    botonLogin.addEventListener("click", (e) => {
+      e.preventDefault(); 
+    
+      liftyCohete.classList.add("despegar");
+    
+      liftyCohete.addEventListener("animationend", () => {
+      
+        window.location.href = "../CASA/casa.html";
+      }, { once: true }); 
+    });
+  </script>
+</body>
+</html>

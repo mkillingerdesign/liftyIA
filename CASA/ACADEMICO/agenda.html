@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda - App</title>
+  <link rel="stylesheet" href="academico.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../casa.html" class="volver"><i class="fas fa-arrow-left"></i> Tornar</a>
+    <h1>Les meves Tasques</h1>
+    <div class="day-selector">
+      <button class="day-btn active" data-day="lun">DILL</button>
+      <button class="day-btn" data-day="mar">DIM</button>
+      <button class="day-btn" data-day="mie">DIM</button>
+      <button class="day-btn" data-day="jue">DIJ</button>
+      <button class="day-btn" data-day="vie">DIV</button>
+    </div>
+
+    <!-- Contingut de l'agenda -->
+    <div class="agenda-content">
+      <!-- Dilluns -->
+      <div class="day-content" id="lun">
+        <div class="agenda-item pending mate">
+          <div class="agenda-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="agenda-task">Fer exercicis</span>
+            <span class="agenda-subject">Matemàtiques</span>
+            <span class="agenda-date">Per a: 12/04/2025</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="agenda-details">
+            <p><strong>Què fer:</strong> Resoldre 10 problemes de sumes i restes del llibre, pàgina 45.</p>
+            <p><strong>Materials:</strong> Llapis, quadern, calculadora.</p>
+            <p><strong>Notes:</strong> Demanar ajuda al professor si no ho entenc.</p>
+          </div>
+        </div>
+        <div class="agenda-item completed lengua">
+          <div class="agenda-header">
+            <i class="fas fa-check-circle"></i>
+            <span class="agenda-task">Escriure conte</span>
+            <span class="agenda-subject">Llengua</span>
+            <span class="agenda-date">Fet: 09/04/2025</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dimarts -->
+      <div class="day-content hidden" id="mar">
+        <div class="agenda-item pending ciencias">
+          <div class="agenda-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="agenda-task">Projecte de biologia</span>
+            <span class="agenda-subject">Ciències</span>
+            <span class="agenda-date">Per a: 15/04/2025</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="agenda-details">
+            <p><strong>Què fer:</strong> Fer un dibuix d'una planta i escriure 5 parts (arrel, tija, fulles, etc.).</p>
+            <p><strong>Materials:</strong> Paper, colors, llibre de ciències.</p>
+            <p><strong>Notes:</strong> Portar el dibuix a classe.</p>
+          </div>
+        </div>
+        <div class="agenda-item pending geo">
+          <div class="agenda-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="agenda-task">Mapa del món</span>
+            <span class="agenda-subject">Geografia</span>
+            <span class="agenda-date">Per a: 14/04/2025</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="agenda-details">
+            <p><strong>Què fer:</strong> Colorejar 3 continents al mapa (Àfrica, Europa, Amèrica).</p>
+            <p><strong>Materials:</strong> Mapa imprès, colors.</p>
+            <p><strong>Notes:</strong> Utilitzar colors diferents per a cada continent.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dimecres -->
+      <div class="day-content hidden" id="mie">
+        <div class="agenda-item pending mate">
+          <div class="agenda-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="agenda-task">Resoldre problemes</span>
+            <span class="agenda-subject">Matemàtiques</span>
+            <span class="agenda-date">Per a: 16/04/2025</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="agenda-details">
+            <p><strong>Què fer:</strong> Fer 5 problemes de multiplicació, pàgina 50.</p>
+            <p><strong>Materials:</strong> Quadern, llapis.</p>
+            <p><strong>Notes:</strong> Revisar amb un adult.</p>
+          </div>
+        </div>
+        <div class="agenda-item completed edfi">
+          <div class="agenda-header">
+            <i class="fas fa-check-circle"></i>
+            <span class="agenda-task">Portar roba d'esport</span>
+            <span class="agenda-subject">Educació Física</span>
+            <span class="agenda-date">Fet: 10/04/2025</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dijous -->
+      <div class="day-content hidden" id="jue">
+        <div class="agenda-item pending historia">
+          <div class="agenda-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="agenda-task">Llegir sobre l'Edat Mitjana</span>
+            <span class="agenda-subject">Història</span>
+            <span class="agenda-date">Per a: 17/04/2025</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="agenda-details">
+            <p><strong>Què fer:</strong> Llegir 2 pàgines del llibre sobre castells i reis.</p>
+            <p><strong>Materials:</strong> Llibre d'història, quadern.</p>
+            <p><strong>Notes:</strong> Escriure 3 coses que he après.</p>
+          </div>
+        </div>
+        <div class="agenda-item pending fisica">
+          <div class="agenda-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="agenda-task">Experiment de física</span>
+            <span class="agenda-subject">Física</span>
+            <span class="agenda-date">Per a: 18/04/2025</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="agenda-details">
+            <p><strong>Què fer:</strong> Fer un experiment amb aigua i un got.</p>
+            <p><strong>Materials:</strong> Got, aigua, paper.</p>
+            <p><strong>Notes:</strong> Escriure què ha passat.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divendres -->
+      <div class="day-content hidden" id="vie">
+        <div class="agenda-item pending arte">
+          <div class="agenda-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="agenda-task">Dibuixar un paisatge</span>
+            <span class="agenda-subject">Art</span>
+            <span class="agenda-date">Per a: 19/04/2025</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="agenda-details">
+            <p><strong>Què fer:</strong> Dibuixar un paisatge amb muntanyes i un riu.</p>
+            <p><strong>Materials:</strong> Paper, colors, llapis.</p>
+            <p><strong>Notes:</strong> Utilitzar colors vius.</p>
+          </div>
+        </div>
+        <div class="agenda-item completed musica">
+          <div class="agenda-header">
+            <i class="fas fa-check-circle"></i>
+            <span class="agenda-task">Practicar cançó</span>
+            <span class="agenda-subject">Música</span>
+            <span class="agenda-date">Fet: 10/04/2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="academico.js"></script>
+</body>
+</html>

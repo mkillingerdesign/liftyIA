@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recursos académicos accesibles para estudiantes de secundaria con discapacidades funcionales">
+    <title>Recursos Académicos - Secundaria</title>
+    <link rel="stylesheet" href="../ACADEMICO/academico.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="../casa.html" class="back-link" aria-label="Volver a la página principal">
+            <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+            </svg>
+            Volver
+        </a>
+        <h1>Recursos Académicos</h1>
+        <p>¡Explora y aprende con diversión!</p>
+    </header>
+    <main>
+        <section class="resources" aria-labelledby="resources-title">
+            <h2 id="resources-title">Elige un área para aprender</h2>
+            <div class="resource-grid">
+                <!-- Matemáticas -->
+                <article class="resource-card" tabindex="0" role="button" aria-label="Recursos de Matemáticas" data-resource="math">
+                    <img src="math-icon.png" alt="Ícono de Matemáticas: un ábaco colorido" class="resource-icon">
+                    <h3>Matemáticas</h3>
+                    <p>¡Suma, resta y juega con números!</p>
+                </article>
+                <!-- Lenguaje -->
+                <article class="resource-card" tabindex="0" role="button" aria-label="Recursos de Lenguaje" data-resource="language">
+                    <img src="language-icon.png" alt="Ícono de Lenguaje: un libro abierto con letras" class="resource-icon">
+                    <h3>Lenguaje</h3>
+                    <p>Lee cuentos y descubre palabras.</p>
+                </article>
+                <!-- Ciencias -->
+                <article class="resource-card" tabindex="0" role="button" aria-label="Recursos de Ciencias" data-resource="science">
+                    <img src="science-icon.png" alt="Ícono de Ciencias: un microscopio y plantas" class="resource-icon">
+                    <h3>Ciencias</h3>
+                    <p>Explora la naturaleza y experimenta.</p>
+                </article>
+                <!-- Sociales -->
+                <article class="resource-card" tabindex="0" role="button" aria-label="Recursos de Sociales" data-resource="social">
+                    <img src="social-icon.png" alt="Ícono de Sociales: un mapa del mundo" class="resource-icon">
+                    <h3>Sociales</h3>
+                    <p>Conoce el mundo y tu comunidad.</p>
+                </article>
+            </div>
+        </section>
+        <!-- Pantalla de detalle -->
+        <section class="resource-detail" id="resource-detail" aria-live="polite" style="display: none;">
+            <button class="back-button" aria-label="Volver a los recursos">
+                <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+                </svg>
+                Volver
+            </button>
+            <h2 id="detail-title"></h2>
+            <div id="detail-content" class="detail-content"></div>
+        </section>
+    </main>
+
+    <script src="academico.js">
+    </script>
+</body>
+</html>

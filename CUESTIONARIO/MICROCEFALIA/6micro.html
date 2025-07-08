@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Lifty - TEA</title>
+
+  <meta name="theme-color" content="#CD5C5C">
+  <meta name="msapplication-navbutton-color" content="#CD5C5C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#CD5C5C">
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../CUESTIONARIO/MICROCEFALIA/questions.css">
+</head>
+<body>
+  
+  <!-- Encabezado con el logo y el número de pregunta, fuera del contenedor blanco -->
+  <header class="encabezado">
+    <a href="../../CUESTIONARIO/MICROCEFALIA/5micro.html" class="flecha-atras">
+      <img src="../../img/FLECHAS.svg" alt="Tornar enrere">
+    </a>
+    <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    <span class="numero-pregunta">6</span>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="contenedor">
+    <!-- Sección de estrellas y datos básicos -->
+    <section class="seccion-estrellas">
+      <div class="estrellas">
+        <img src="../../img/estrellas6.svg" alt="Estrella">
+      </div>
+      <p class="etiqueta-datos">Dades específiques</p>
+    </section>
+
+    <!-- Sección de la pregunta y la mascota -->
+    <section class="seccion-pregunta">
+      <h2 class="pregunta">Et sents bé amb els teus <br>amics, companys i familia?</h2>
+      <div class="mascota">
+        <img src="../../img/Liftymicro.svg" alt="Mascota">
+      </div>
+      <p class="texto-hablar">Clica aquí per parlar</p>
+    </section>
+  </div>
+
+  <!-- Botón del micrófono con id para JavaScript -->
+  <button class="boton-microfono" id="boton-microfono">
+    <img src="../../img/microlifty.svg" alt="Micròfon">
+  </button>
+  
+  <!-- Botón de siguiente con id para JavaScript -->
+  <a href="../../CUESTIONARIO/MICROCEFALIA/7micro.html" class="boton-siguiente" id="boton-siguiente">SEGÜENT</a>
+
+  <!-- Script para activar las animaciones -->
+  <script>
+    const botonMicrofono = document.getElementById("boton-microfono");
+    const botonSiguiente = document.getElementById("boton-siguiente");
+    let estaEscuchando = false;
+
+    // Animación del micrófono
+    botonMicrofono.addEventListener("click", () => {
+      if (!estaEscuchando) {
+        // Añadimos la clase de animación al hacer clic
+        botonMicrofono.classList.add("pulsar");
+        estaEscuchando = true;
+      } else {
+        // Quitamos la clase de animación al detener
+        botonMicrofono.classList.remove("pulsar");
+        estaEscuchando = false;
+      }
+    });
+
+    // Animación del botón de siguiente
+    botonSiguiente.addEventListener("click", (event) => {
+      // Prevenimos la navegación inmediata para que se vea la animación
+      event.preventDefault();
+      // Añadimos la clase de animación al hacer clic
+      botonSiguiente.classList.add("escalar");
+      // Navegamos a la siguiente página después de la animación (500ms)
+      setTimeout(() => {
+        window.location.href = botonSiguiente.href;
+      }, 500);
+    });
+  </script>
+</body>
+</html>

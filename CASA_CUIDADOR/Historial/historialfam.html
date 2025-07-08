@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>L Duo - Historial</title>
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  <link rel="icon" sizes="192x192" href="../img/icon.png">
+  <link rel="icon" sizes="512x512" href="../img/icon.png">
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="historialfam.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <svg class="corazon-img" viewBox="0 0 100 100" width="25" height="25">
+            <path class="corazon-path" d="M50 88.87C17.73 70.47 10 52.67 10 37.5a20 20 0 0134.64-13.33L50 30.73l5.36-6.56A20 20 0 0190 37.5c0 15.17-7.73 32.97-40 51.37z" />
+          </svg>
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>8:00</span>
+              <span>10:00</span>
+              <span>14:00</span>
+              <span>17:00</span>
+              <span>20:00</span>
+              <span>22:00</span>
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <div class="historial-container">
+      <h1>Historial de l'Usuari</h1>
+
+      <!-- Círculo de progreso general -->
+      <div class="tabla-porcentaje">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring-circle" cx="80" cy="80" r="72" />
+          <circle class="progress-ring-circle-fill" cx="80" cy="80" r="72" id="progressCircle" />
+        </svg>
+        <span class="porcentaje" id="porcentaje">82%</span>
+      </div>
+
+      <!-- Pestañas -->
+      <div class="pestanas">
+        <button class="pestana activa" data-seccion="academico">Historial Acadèmic</button>
+        <button class="pestana" data-seccion="dia-a-dia">Historial Dia a Dia</button>
+        <button class="pestana" data-seccion="evolucion">Evolució i Feedback</button>
+      </div>
+
+      <!-- Contenido de las pestañas -->
+      <!-- Historial Académico -->
+      <div class="seccion-historial" id="academico">
+        <h2>Historial Acadèmic</h2>
+        <div class="filtros">
+          <select id="filtro-mes-academico">
+            <option value="todos">Tots els mesos</option>
+            <option value="maig">Maig 2025</option>
+            <option value="abril">Abril 2025</option>
+          </select>
+          <select id="filtro-materia">
+            <option value="todas">Totes les matèries</option>
+            <option value="matematiques">Matemàtiques</option>
+            <option value="llengua">Llengua</option>
+            <option value="ciencies">Ciències</option>
+          </select>
+          <select id="filtro-estado-academico">
+            <option value="todos">Tots els estats</option>
+            <option value="completado">Completat</option>
+            <option value="pendiente">Pendent</option>
+            <option value="fallado">Fallat</option>
+          </select>
+        </div>
+        <div class="actividad">
+          <span class="fecha">10/05/2025</span> - Examen de Matemàtiques - <span class="estado fallado">Fallat</span>
+          <p class="detalle">Error en ecuaciones lineales. Nota: 4.5/10.</p>
+          <p class="sugerencia">Sugerencia: Practicar más problemas de álgebra lineal (revisar ejercicios del tema 3).</p>
+        </div>
+        <div class="actividad">
+          <span class="fecha">08/05/2025</span> - Tasca de Llengua - <span class="estado completado">Completat</span>
+          <p class="detalle">Anàlisi de text completat amb èxit. Nota: 8/10.</p>
+          <p class="sugerencia">Sugerencia: Millorar la cohesió en els paràgrafs (revisar guies d'escriptura).</p>
+        </div>
+        <div class="actividad">
+          <span class="fecha">05/05/2025</span> - Projecte de Ciències - <span class="estado pendiente">Pendent</span>
+          <p class="detalle">Entrega del projecte sobre ecosistemes pendent per al 20/05/2025.</p>
+          <p class="sugerencia">Sugerencia: Completar la secció d'impacte ambiental abans de l'entrega.</p>
+        </div>
+      </div>
+
+      <!-- Historial Día a Día -->
+      <div class="seccion-historial" id="dia-a-dia" style="display: none;">
+        <h2>Historial Dia a Dia</h2>
+        <div class="filtros">
+          <select id="filtro-mes-dia">
+            <option value="todos">Tots els mesos</option>
+            <option value="maig">Maig 2025</option>
+            <option value="abril">Abril 2025</option>
+          </select>
+          <select id="filtro-categoria-dia">
+            <option value="todas">Totes les categories</option>
+            <option value="salud">Salut</option>
+            <option value="rutinas">Rutines</option>
+            <option value="emocional">Estat Emocional</option>
+          </select>
+          <select id="filtro-estado-dia">
+            <option value="todos">Tots els estats</option>
+            <option value="cumplido">Complert</option>
+            <option value="fallado">Fallat</option>
+          </select>
+        </div>
+        <div class="actividad">
+          <span class="fecha">18/05/2025</span> - Medicació (16:00) - <span class="estado fallado">Fallat</span>
+          <p class="detalle">No va prendre la pastilla de les 16:00.</p>
+          <p class="sugerencia">Sugerencia: Configurar un recordatori al telèfon per a les 16:00.</p>
+        </div>
+        <div class="actividad">
+          <span class="fecha">17/05/2025</span> - Estat Emocional (20:00) - <span class="estado fallado">Fallat</span>
+          <p class="detalle">No va registrar l'estat emocional a les 20:00.</p>
+          <p class="sugerencia">Sugerencia: Fer una pausa i registrar l'estat emocional al final del dia.</p>
+        </div>
+        <div class="actividad">
+          <span class="fecha">16/05/2025</span> - Exercici Matinal (07:00) - <span class="estado cumplido">Complert</span>
+          <p class="detalle">Caminada de 30 minuts completada.</p>
+          <p class="sugerencia">Sugerencia: Continuar amb aquesta rutina, pots augmentar a 40 minuts.</p>
+        </div>
+      </div>
+
+      <!-- Evolución y Feedback -->
+      <div class="seccion-historial" id="evolucion" style="display: none;">
+        <h2>Evolució i Feedback</h2>
+        <div class="evolucion">
+          <span class="titulo">Compliment Acadèmic:</span> 78% (millor que el 65% del mes passat).
+        </div>
+        <div class="evolucion">
+          <span class="titulo">Compliment Dia a Dia:</span> 85% (has millorat en rutines matinals).
+        </div>
+        <div class="evolucion">
+          <span class="titulo">Feedback General:</span> Has millorat en consistència, però cal més atenció en els horaris de medicació.
+        </div>
+      </div>
+    </div>
+
+    
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../Ajustes/ajustesfam.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../Progreso/progresofam.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../img/1 estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../fam.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../img/Home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../Historial/historialfam.html" class="nav-item historial activo" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../Perfil/perfilfam.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <script>
+    // Animación del header-bottom
+    const headerBottom = document.getElementById("headerBottom");
+    headerBottom.addEventListener("click", () => {
+      headerBottom.classList.toggle("expandido");
+    });
+
+    // Corazón emocional
+    const corazonImg = document.querySelector(".corazon-img");
+    let emocionActual = "feliz";
+    corazonImg.classList.add(emocionActual);
+    setInterval(() => {
+      const emociones = ["feliz", "ansioso", "triste", "enojado"];
+      emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+      corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+      corazonImg.classList.add(emocionActual);
+    }, 5000);
+
+    // Navegación moderna
+    const navItems = document.querySelectorAll(".nav-item");
+    const liftyGuia = document.getElementById("liftyGuia");
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        navItems.forEach(i => i.classList.remove("activo"));
+        item.classList.add("activo");
+        const rect = item.getBoundingClientRect();
+        liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+        liftyGuia.classList.add("viajar");
+      });
+    });
+
+    // Interactividad de los días
+    const dias = document.querySelectorAll(".dia");
+    dias.forEach(dia => {
+      dia.addEventListener("click", () => {
+        const parentCirculos = dia.closest(".circulos");
+        parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+        dia.classList.add("seleccionado");
+      });
+    });
+
+    // Pestañas Historial
+    const pestanas = document.querySelectorAll(".pestana");
+    const secciones = document.querySelectorAll(".seccion-historial");
+    pestanas.forEach(pestana => {
+      pestana.addEventListener("click", () => {
+        pestanas.forEach(p => p.classList.remove("activa"));
+        pestana.classList.add("activa");
+        secciones.forEach(s => s.style.display = "none");
+        document.getElementById(pestana.dataset.seccion).style.display = "block";
+      });
+    });
+
+    // Filtros (simulados con JavaScript)
+    const academicoItems = document.querySelectorAll("#academico .actividad");
+    const diaItems = document.querySelectorAll("#dia-a-dia .actividad");
+
+    document.getElementById("filtro-mes-academico").addEventListener("change", filterAcademico);
+    document.getElementById("filtro-materia").addEventListener("change", filterAcademico);
+    document.getElementById("filtro-estado-academico").addEventListener("change", filterAcademico);
+
+    document.getElementById("filtro-mes-dia").addEventListener("change", filterDia);
+    document.getElementById("filtro-categoria-dia").addEventListener("change", filterDia);
+    document.getElementById("filtro-estado-dia").addEventListener("change", filterDia);
+
+    function filterAcademico() {
+      const mes = document.getElementById("filtro-mes-academico").value;
+      const materia = document.getElementById("filtro-materia").value;
+      const estado = document.getElementById("filtro-estado-academico").value;
+
+      academicoItems.forEach(item => {
+        const fecha = item.querySelector(".fecha").textContent;
+        const mesItem = fecha.includes("05/2025") ? "maig" : "abril";
+        const materiaItem = item.textContent.toLowerCase().includes("matemàtiques") ? "matematiques" :
+                           item.textContent.toLowerCase().includes("llengua") ? "llengua" :
+                           item.textContent.toLowerCase().includes("ciències") ? "ciencies" : "altres";
+        const estadoItem = item.querySelector(".estado").classList.contains("completado") ? "completado" :
+                          item.querySelector(".estado").classList.contains("pendiente") ? "pendiente" : "fallado";
+
+        const showMes = mes === "todos" || mes === mesItem;
+        const showMateria = materia === "todas" || materia === materiaItem;
+        const showEstado = estado === "todos" || estado === estadoItem;
+
+        item.style.display = (showMes && showMateria && showEstado) ? "block" : "none";
+      });
+    }
+
+    function filterDia() {
+      const mes = document.getElementById("filtro-mes-dia").value;
+      const categoria = document.getElementById("filtro-categoria-dia").value;
+      const estado = document.getElementById("filtro-estado-dia").value;
+
+      diaItems.forEach(item => {
+        const fecha = item.querySelector(".fecha").textContent;
+        const mesItem = fecha.includes("05/2025") ? "maig" : "abril";
+        const categoriaItem = item.textContent.toLowerCase().includes("medicació") ? "salud" :
+                             item.textContent.toLowerCase().includes("estat emocional") ? "emocional" : "rutinas";
+        const estadoItem = item.querySelector(".estado").classList.contains("cumplido") ? "cumplido" : "fallado";
+
+        const showMes = mes === "todos" || mes === mesItem;
+        const showCategoria = categoria === "todas" || categoria === categoriaItem;
+        const showEstado = estado === "todos" || estado === estadoItem;
+
+        item.style.display = (showMes && showCategoria && showEstado) ? "block" : "none";
+      });
+    }
+
+    
+    closeIaChat.addEventListener("click", () => {
+      iaChatTab.style.display = "none";
+    });
+
+    iaSendMessage.addEventListener("click", sendIaMessage);
+    iaUserInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendIaMessage();
+    });
+
+    function sendIaMessage() {
+      const message = iaUserInput.value.trim();
+      if (message) {
+        const userMsg = document.createElement("div");
+        userMsg.classList.add("mensaje", "usuario");
+        userMsg.textContent = message;
+        iaChatBody.appendChild(userMsg);
+        iaUserInput.value = "";
+        setTimeout(() => {
+          const iaMsg = document.createElement("div");
+          iaMsg.classList.add("mensaje", "lifty");
+          iaMsg.textContent = "Com et puc ajudar amb el teu historial? Pots preguntar-me sobre les teves activitats acadèmiques o dia a dia.";
+          iaChatBody.appendChild(iaMsg);
+          iaChatBody.scrollTop = iaChatBody.scrollHeight;
+        }, 1000);
+      }
+    }
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "ca-ES";
+    recognition.continuous = false;
+
+    iaVoiceBtn.addEventListener("click", () => {
+      recognition.start();
+      iaVoiceBtn.style.background = "#FF5E62";
+    });
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      iaUserInput.value = transcript;
+      sendIaMessage();
+    };
+
+    recognition.onend = () => {
+      iaVoiceBtn.style.background = "";
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Error en el reconeixement de veu:", event.error);
+    };
+
+    // Actualización dinámica del círculo de progreso (simulada)
+    setInterval(() => {
+      const porcentaje = Math.floor(Math.random() * 20) + 70; // Entre 70% y 90%
+      document.getElementById("porcentaje").textContent = `${porcentaje}%`;
+      const strokeDashoffset = 452.39 * (1 - porcentaje / 100); // Ajustado para r=72
+      document.getElementById("progressCircle").style.strokeDashoffset = strokeDashoffset;
+    }, 10000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1282 @@
+/* Recursos académicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Agenda y Horario */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e6f3ff; /* Azul claro */
+  min-height: 100vh;
+  display: flex;
+}
+
+.back-tareas {
+  background-color: white;
+  z-index: 9;
+}
+
+.container {
+  width: 414px;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: transparent; /* Asegura que el contenedor no sobrescriba */
+}
+
+.volver {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #d3a29d;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.volver:hover {
+  background-color: #c08c87;
+}
+
+.volver i {
+  margin-right: 5px;
+}
+
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+  color: #2595CD; /* Color azul para los títulos */
+  text-align: center;
+  font-size: 36px;
+  margin: 5px 0 20px;
+}
+
+.schedule-wrapper {
+  width: 100%;
+}
+
+.schedule {
+  display: flex;
+  width: 100%;
+}
+
+/* Días y clases (por defecto, horizontal) */
+.days-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.day-block {
+  flex: 1;
+}
+
+.day-header {
+  background-color: #f0eceb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  height: 30px;
+}
+
+.class-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.class-block i {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+/* Colores por materia */
+.mate { background-color: #1E90FF; }
+.lengua { background-color: #90ee90; }
+.ciencias { background-color: #87ceeb; }
+.historia { background-color: #ffd700; }
+.arte { background-color: #dda0dd; }
+.fisica { background-color: #87ceeb; }
+.quimica { background-color: #87ceeb; }
+.geo { background-color: #ffd700; }
+.edfi { background-color: #90ee90; }
+.ingles { background-color: #90ee90; }
+.tecnologia { background-color: #87ceeb; }
+.musica { background-color: #dda0dd; }
+.recreo { background-color: #d3d3d3; font-style: italic; }
+
+/* Sección de Recordatorios */
+.reminders {
+  margin-top: 20px;
+}
+
+.reminders h2 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 2px solid #333;
+}
+
+.reminder-item i {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.reminder-item.pending {
+  background-color: #ffcccb;
+}
+
+.reminder-item.pending i {
+  color: #ff4500;
+}
+
+.reminder-item.completed {
+  background-color: #90ee90;
+}
+
+.reminder-item.completed i {
+  color: #228b22;
+}
+
+.reminder-title {
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.reminder-status {
+  font-size: 10px;
+  color: #333;
+}
+
+/* Estilos para la Agenda (recordatorio de tareas) */
+.day-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.day-btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #f0eceb;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.day-btn.active {
+  background-color: #d3a29d;
+  color: white;
+}
+
+.day-btn:hover {
+  background-color: #e0dcdc;
+}
+
+.day-content {
+  display: block;
+}
+
+.day-content.hidden {
+  display: none;
+}
+
+.agenda-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.agenda-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.agenda-item i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.agenda-item.pending i {
+  color: #ff4500;
+}
+
+.agenda-item.completed i {
+  color: #228b22;
+}
+
+.agenda-task {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.agenda-subject {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+}
+
+.agenda-date {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+}
+
+.toggle-icon {
+  font-size: 16px;
+  color: #333;
+}
+
+.agenda-details {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #333;
+}
+
+.agenda-details.hidden {
+  display: none;
+}
+
+.agenda-details p {
+  margin: 5px 0;
+}
+
+/* Responsive para 414px (diseño vertical) */
+@media (max-width: 414px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .volver {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  /* Diseño vertical para el horario */
+  .schedule {
+    flex-direction: column;
+  }
+
+  .days-grid {
+    flex-direction: column;
+  }
+
+  .day-block {
+    margin-bottom: 20px;
+  }
+
+  .day-header {
+    font-size: 16px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 8px;
+  }
+
+  .class-block {
+    font-size: 14px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .class-block i {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  /* Ajustes para la Agenda en responsive */
+  .day-selector {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .day-btn {
+    font-size: 14px;
+    padding: 8px;
+    margin: 0;
+  }
+
+  .agenda-item {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .agenda-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .agenda-item i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .agenda-task {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .agenda-subject {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .agenda-date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .toggle-icon {
+    font-size: 18px;
+    align-self: flex-end;
+  }
+
+  .agenda-details {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .reminders h2 {
+    font-size: 24px;
+  }
+  .reminder-item {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .reminder-item i {
+    font-size: 18px;
+  }
+  .reminder-status {
+    font-size: 12px;
+  }
+}
+
+/* Ayuda Lifty */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e6f3ff; /* Azul claro */
+}
+
+.container {
+  width: 414px;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: transparent; /* Asegura que el contenedor no sobrescriba */
+}
+
+.volver {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #343541; /* Color oscuro estilo ChatGPT */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.volver:hover {
+  background-color: #444654;
+}
+
+.volver i {
+  margin-right: 5px;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #2595CD; /* Color azul para el título */
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 5px 0 20px;
+}
+
+.schedule-wrapper {
+  width: 100%;
+}
+
+.schedule {
+  display: flex;
+  width: 100%;
+}
+
+/* Días y clases (por defecto, horizontal) */
+.days-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 5px; /* Más espacio entre bloques */
+}
+
+.day-block {
+  flex: 1;
+  min-width: 100px; /* Evita que los bloques sean demasiado estrechos */
+}
+
+.day-header {
+  background-color: #313131;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px; /* Aumentado para mejor legibilidad */
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  height: 35px; /* Más alto para mejor visibilidad */
+  text-transform: uppercase; /* Para claridad */
+}
+
+.class-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  border: 1px solid #333; /* Borde fino para definición */
+  border-radius: 10px; /* Bordes suaves */
+  margin: 5px; /* Más margen */
+  font-size: 12px; /* Aumentado para legibilidad */
+  font-weight: 700; /* Énfasis en el texto */
+  text-align: center;
+  padding: 8px;
+  box-sizing: border-box;
+  height: 60px; /* Más alto para comodidad */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease; /* Animación al interactuar */
+}
+
+.class-block:hover {
+  transform: scale(1.05); /* Efecto visual para interacción */
+}
+
+.class-block i {
+  font-size: 16px; /* Ícono más grande */
+  margin-bottom: 4px;
+}
+
+/* Estilo especial para Recreo */
+.recreo {
+  font-style: italic;
+  border: 2px dashed #333; /* Borde punteado para destacar */
+}
+
+/* Colores suaves por materia y contraste de texto */
+.mate { 
+  background-image: linear-gradient(30deg, #00b7ff, white);
+  color: #333; 
+}
+.lengua { 
+  background-image: linear-gradient(30deg, #ff0000, white);
+  color: #333; 
+}
+.ciencias { 
+  background-image: linear-gradient(30deg, #00ff00, white);
+  color: #333; 
+}
+.historia { 
+  background-image: linear-gradient(30deg, #ff8000, white);
+  color: #333; 
+}
+.arte { 
+  background-image: linear-gradient(30deg, #e50041, white);
+  color: #333; 
+}
+.fisica { 
+  background-image: linear-gradient(30deg, #7100fc, white);
+  color: #333; 
+}
+.quimica { 
+  background-image: linear-gradient(30deg, #404040, white);
+  color: #333; 
+}
+.geo { 
+  background-image: linear-gradient(30deg, #1164ff, white);
+  color: #333; 
+}
+.edfi { 
+  background-image: linear-gradient(30deg, #b108ff, white);
+  color: #333; 
+}
+.ingles { 
+  background-image: linear-gradient(30deg, #ffe600, white);
+  color: #333; 
+}
+.tecnologia { 
+  background-image: linear-gradient(30deg, #a24101, white);
+  color: #333; 
+}
+.musica { 
+  background-image: linear-gradient(30deg, #ffe1b3, white);
+  color: #333; 
+}
+.recreo { 
+  background-image: linear-gradient(30deg, #ffffff, white);
+  color: #333; 
+}
+
+/* Aplicar el mismo color al ícono */
+.mate i, .lengua i, .ciencias i, .historia i, .arte i, .fisica i, .quimica i, .geo i, .edfi i, .ingles i, .tecnologia i, .musica i, .recreo i { 
+  color: #333; /* Íconos oscuros para todos los fondos pastel */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .days-grid {
+    flex-direction: column; /* Apila los días verticalmente */
+  }
+
+  .day-block {
+    min-width: 100%; /* Ocupa todo el ancho */
+  }
+
+  .day-header {
+    font-size: 12px;
+    height: 30px;
+  }
+
+  .class-block {
+    font-size: 11px;
+    height: 55px;
+    margin: 4px;
+  }
+
+  .class-block i {
+    font-size: 14px;
+  }
+}
+
+/* Sección de Recordatorios */
+.reminders {
+  margin-top: 20px;
+}
+
+.reminders h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 2px solid #333;
+}
+
+.reminder-item i {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.reminder-item.pending {
+  background-color: #ffcccb;
+}
+
+.reminder-item.pending i {
+  color: #ff4500;
+}
+
+.reminder-item.completed {
+  background-color: #90ee90;
+}
+
+.reminder-item.completed i {
+  color: #228b22;
+}
+
+.reminder-title {
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.reminder-status {
+  font-size: 10px;
+  color: #333;
+}
+
+/* Estilos para la Agenda (recordatorio de tareas) */
+.day-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.day-btn {
+  flex
+        
+    : 1;
+  padding: 10px;
+  background-color: #f0eceb;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.day-btn.active {
+  background-color: #343541;
+  color: white;
+}
+
+.day-btn:hover {
+  background-color: #e0dcdc;
+}
+
+.day-content {
+  display: block;
+}
+
+.day-content.hidden {
+  display: none;
+}
+
+.agenda-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.agenda-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.agenda-item i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.agenda-item.pending i {
+  color: #ff4500;
+}
+
+.agenda-item.completed i {
+  color: #228b22;
+}
+
+.agenda-task {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.agenda-subject {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+}
+
+.agenda-date {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+}
+
+.toggle-icon {
+  font-size: 16px;
+  color: #333;
+}
+
+.agenda-details {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #333;
+}
+
+.agenda-details.hidden {
+  display: none;
+}
+
+.agenda-details p {
+  margin: 5px 0;
+}
+
+/* Estilos para el Chat de Ayuda Lifty (estilo ChatGPT) */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 600px; /* Ajustado para 896px de alto */
+  background-color: #ffffff; /* Azul claro */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ffffff; /* Azul claro */
+}
+
+.message {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.lifty-message {
+  justify-content: flex-start;
+}
+
+.user-message {
+  justify-content: flex-end;
+}
+
+.message-content {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff; /* Texto blanco para contraste */
+}
+
+.lifty-message .message-content {
+  background-color: #2595CD; /* Verde oscuro estilo ChatGPT */
+  color: #ececf1;
+}
+
+.user-message .message-content {
+  background-color: #7dc1e2; /* Gris oscuro para el usuario */
+  color: #ececf1;
+}
+
+.message-content p {
+  margin: 5px 0;
+}
+
+.message-content i {
+  margin: 0 5px;
+  color: #ececf1;
+}
+
+.chat-input {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 0 0 12px 12px;
+}
+
+.chat-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.action-btn {
+  padding: 12px;
+  background-color: #40414f; /* Gris oscuro */
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #ececf1;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #565869;
+}
+
+.text-input {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f8;
+  border: 1px solid #d9d9e3;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #343541;
+  font-family: 'Poppins', sans-serif;
+}
+
+#user-input:focus {
+  outline: none;
+}
+
+.send露營車.send-btn {
+  padding: 10px;
+  background-color: #0b141a; /* Verde oscuro */
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #ececf1;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #1a2a34;
+}
+
+/* Responsive para 414px (diseño vertical) */
+@media (max-width: 414px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .volver {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  /* Diseño vertical para el horario */
+  .schedule {
+    flex-direction: column;
+  }
+
+  .days-grid {
+    flex-direction: column;
+  }
+
+  .day-block {
+    margin-bottom: 20px;
+  }
+
+  .day-header {
+    font-size: 16px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 8px;
+  }
+
+  .class-block {
+    font-size: 14px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .class-block i {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  /* Ajustes para la Agenda en responsive */
+  .day-selector {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .day-btn {
+    font-size: 14px;
+    padding: 8px;
+    margin: 0;
+  }
+
+  .agenda-item {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .agenda-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .agenda-item i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .agenda-task {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .agenda-subject {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .agenda-date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .toggle-icon {
+    font-size: 18px;
+    align-self: flex-end;
+  }
+
+  .agenda-details {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* Ajustes para el Chat en responsive */
+  .chat-container {
+    height: 600px; /* Ajustado para 896px de alto */
+  }
+
+  .message-content {
+    font-size: 16px;
+  }
+
+  .action-btn {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  #user-input {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .send-btn {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .reminders h2 {
+    font-size: 24px;
+  }
+  .reminder-item {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .reminder-item i {
+    font-size: 18px;
+  }
+  .reminder-status {
+    font-size: 12px;
+  }
+}
+
+/* Recursos académicos */
+body {
+  font-family: 'Comic Neue', sans-serif;
+  background-color: #e6f3ff; /* Azul claro */
+  line-height: 1.6;
+  color: #2d2d2d;
+  font-size: 1.3rem;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #4a90e2, #50c9c3);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+.back-link {
+  position: absolute;
+  top: 1.9rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #ffd700;
+  color: #2d2d2d;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-link:hover, .back-link:focus {
+  background-color: #ffc107;
+  transform: translateY(-2px);
+  outline: 3px solid white;
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  fill: #2d2d2d;
+  margin-right: 0.5rem;
+}
+
+/* Sección de recursos */
+.resources {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.resources h2 {
+  font-size: 2.5rem;
+  color: #d81b60;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  border: 4px solid #4a90e2;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resource-card:hover, .resource-card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: #ffd700;
+  outline: none;
+}
+
+.resource-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.resource-card h3 {
+  font-size: 1.8rem;
+  color: #2d2d2d;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.resource-card p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Pantalla de detalle */
+.resource-detail {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  border: 4px solid #4a90e2;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffd700;
+  color: #2d2d2d;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button:hover, .back-button:focus {
+  background-color: #ffc107;
+  transform: translateY(-2px);
+  outline: 3px solid #4a90e2;
+}
+
+.back-button .back-icon {
+  margin-right: 0.5rem;
+}
+
+.resource-detail h2 {
+  font-size: 2.5rem;
+  color: #d81b60;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.detail-content {
+  font-size: 1.3rem;
+  color: #2d2d2d;
+}
+
+.detail-content p {
+  margin-bottom: 1rem;
+}
+
+.detail-content strong {
+  color: #4a90e2;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #4a90e2, #50c9c3);
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .resource-card, .back-button, .back-link {
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .header p {
+    font-size: 1.2rem;
+  }
+
+  .resources h2 {
+    font-size: 2rem;
+  }
+
+  .resource-card {
+    padding: 1.5rem;
+  }
+
+  .resource-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .resource-card p {
+    font-size: 1rem;
+  }
+
+  .resource-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .back-link, .back-button {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .resource-detail h2 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,466 @@
+/* Fuentes */
+@font-face {
+  font-family: 'Omnes SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Omnes SemiBold'), url('../Omnes SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Omnes SemiBold Italic';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Omnes SemiBold Italic'), url('../Omnes SemiBold Italic.woff') format('woff');
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #2595CD 0%, #0A1D56 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* Estrellas de fondo */
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1000;
+  top: 0;
+}
+
+.star {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 10s infinite ease-in-out;
+  box-shadow: 0 0 7px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Posiciones y tamaños de las estrellas */
+.star:nth-child(1) { width: 4px; height: 4px; top: 10%; left: 5%; animation-duration: 12s; }
+.star:nth-child(2) { width: 3px; height: 3px; top: 20%; left: 15%; animation-duration: 15s; }
+.star:nth-child(3) { width: 5px; height: 5px; top: 30%; left: 25%; animation-duration: 8s; }
+.star:nth-child(4) { width: 2px; height: 2px; top: 40%; left: 35%; animation-duration: 10s; }
+.star:nth-child(5) { width: 4px; height: 4px; top: 50%; left: 45%; animation-duration: 14s; }
+.star:nth-child(6) { width: 3px; height: 3px; top: 60%; left: 55%; animation-duration: 9s; }
+.star:nth-child(7) { width: 5px; height: 5px; top: 70%; left: 65%; animation-duration: 11s; }
+.star:nth-child(8) { width: 2px; height: 2px; top: 80%; left: 75%; animation-duration: 13s; }
+.star:nth-child(9) { width: 4px; height: 4px; top: 15%; left: 85%; animation-duration: 7s; }
+.star:nth-child(10) { width: 3px; height: 3px; top: 25%; left: 95%; animation-duration: 16s; }
+.star:nth-child(11) { width: 5px; height: 5px; top: 35%; left: 10%; animation-duration: 12s; }
+.star:nth-child(12) { width: 2px; height: 2px; top: 45%; left: 20%; animation-duration: 10s; }
+.star:nth-child(13) { width: 4px; height: 4px; top: 55%; left: 30%; animation-duration: 14s; }
+.star:nth-child(14) { width: 3px; height: 3px; top: 65%; left: 40%; animation-duration: 9s; }
+.star:nth-child(15) { width: 5px; height: 5px; top: 75%; left: 50%; animation-duration: 11s; }
+.star:nth-child(16) { width: 2px; height: 2px; top: 85%; left: 60%; animation-duration: 13s; }
+.star:nth-child(17) { width: 4px; height: 4px; top: 20%; left: 70%; animation-duration: 7s; }
+.star:nth-child(18) { width: 3px; height: 3px; top: 30%; left: 80%; animation-duration: 16s; }
+.star:nth-child(19) { width: 5px; height: 5px; top: 40%; left: 90%; animation-duration: 8s; }
+.star:nth-child(20) { width: 2px; height: 2px; top: 50%; left: 5%; animation-duration: 15s; }
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 0.3; }
+  100% { transform: translateY(0) scale(1); opacity: 0.6; }
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+/* Sección del formulario */
+.mascota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10vh;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Logos */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-id {
+  width: 160px;
+  filter: drop-shadow(-5px 10px 5px #063b56);
+  height: auto;
+  animation: lifty-move 6s infinite ease-in-out;
+}
+
+.lifty-hola {
+  width: 200px;
+  filter: drop-shadow(-5px 10px 5px #063b56);
+  height: auto;
+  animation: lifty-move 6s infinite ease-in-out;
+}
+
+@keyframes lifty-move {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(20px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(20px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Slogan con efecto de tipado */
+.slogan.typing {
+  font-family: 'Omnes SemiBold', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: #FFFFFF;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid transparent;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: transparent; }
+}
+
+/* Formulario */
+.formulario-registro {
+  width: 90%;
+  max-width: 530px;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.grupo-formulario {
+  margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Omnes SemiBold', sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="email"],
+.grupo-formulario input[type="password"],
+.grupo-formulario select,
+.grupo-formulario textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.grupo-formulario input[type="text"]:focus,
+.grupo-formulario input[type="email"]:focus,
+.grupo-formulario input[type="password"]:focus,
+.grupo-formulario select:focus,
+.grupo-formulario textarea:focus {
+  border-color: #E6F0FA;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.grupo-formulario textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Opciones de relación */
+.opciones-relacion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opcion-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.opcion-radio input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.opcion-radio input[type="radio"]:checked {
+  background: #2595CD;
+  border-color: #2595CD;
+}
+
+.opcion-radio span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+/* Términos y condiciones */
+.aceptar-terminos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.aceptar-terminos input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.aceptar-terminos input[type="checkbox"]:checked {
+  background: #2595CD;
+  border-color: #2595CD;
+}
+
+.aceptar-terminos a {
+  color: #E6F0FA;
+  text-decoration: underline;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Botones */
+.botones-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 530px;
+  margin: 30px auto 10px;
+}
+
+.boton.continuar {
+  display: block;
+  width: 90%;
+  padding: 15px;
+  border-radius: 18px;
+  font-family: 'Omnes SemiBold', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  background: #2595CD;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.boton.continuar:hover {
+  background: #E6F0FA;
+  color: #2595CD;
+}
+
+/* Responsive: Móviles pequeños (≤480px) */
+@media (max-width: 480px) {
+  .mascota {
+    padding-top: 5vh;
+  }
+
+  .logo-id {
+    width: 120px;
+  }
+
+  .lifty-hola {
+    width: 150px;
+  }
+
+  .slogan.typing {
+    font-size: 20px;
+  }
+
+  .formulario-registro {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .grupo-formulario input[type="text"],
+  .grupo-formulario input[type="email"],
+  .grupo-formulario input[type="password"],
+  .grupo-formulario select,
+  .grupo-formulario textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .grupo-formulario label {
+    font-size: 13px;
+  }
+
+  .opcion-radio span {
+    font-size: 13px;
+  }
+
+  .boton.continuar {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .star {
+    animation-duration: 8s;
+  }
+}
+
+/* Responsive: Móviles muy pequeños (≤320px) */
+@media (max-width: 320px) {
+  .logo-id {
+    width: 100px;
+  }
+
+  .lifty-hola {
+    width: 120px;
+  }
+
+  .slogan.typing {
+    font-size: 18px;
+  }
+
+  .formulario-registro {
+    padding: 12px;
+  }
+
+  .botones-formulario {
+    max-width: 100%;
+  }
+
+  .boton.continuar {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .star {
+    animation-duration: 6s;
+  }
+}
+
+/* Responsive: Tablets (481px-768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .mascota {
+    padding-top: 8vh;
+  }
+
+  .logo-id {
+    width: 140px;
+  }
+
+  .lifty-hola {
+    width: 180px;
+  }
+
+  .slogan.typing {
+    font-size: 22px;
+  }
+
+  .formulario-registro {
+    max-width: 450px;
+    padding: 18px;
+  }
+
+  .grupo-formulario input[type="text"],
+  .grupo-formulario input[type="email"],
+  .grupo-formulario input[type="password"],
+  .grupo-formulario select,
+  .grupo-formulario textarea {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .grupo-formulario label {
+    font-size: 14px;
+  }
+
+  .boton.continuar {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+/* Responsive: Pantallas grandes (≥1024px) */
+@media (min-width: 1024px) {
+  .logo-id {
+    width: 180px;
+  }
+
+  .lifty-hola {
+    width: 250px;
+  }
+
+  .slogan.typing {
+    font-size: 30px;
+  }
+
+  .formulario-registro {
+    max-width: 600px;
+    padding: 25px;
+  }
+
+  .grupo-formulario input[type="text"],
+  .grupo-formulario input[type="email"],
+  .grupo-formulario input[type="password"],
+  .grupo-formulario select,
+  .grupo-formulario textarea {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .grupo-formulario label {
+    font-size: 15px;
+  }
+
+  .boton.continuar {
+    padding: 15px 35px;
+    font-size: 18px;
+  }
+}

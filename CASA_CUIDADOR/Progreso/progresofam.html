@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>L Duo - Progrés de l'Usuari</title>
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  <link rel="icon" sizes="192x192" href="../img/icon.png">
+  <link rel="icon" sizes="512x512" href="../img/icon.png">
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="progresofam.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <svg class="corazon-img" viewBox="0 0 100 100" width="25" height="25">
+            <path class="corazon-path" d="M50 88.87C17.73 70.47 10 52.67 10 37.5a20 20 0 0134.64-13.33L50 30.73l5.36-6.56A20 20 0 0190 37.5c0 15.17-7.73 32.97-40 51.37z" />
+          </svg>
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>8:00</span>
+              <span>10:00</span>
+              <span>14:00</span>
+              <span>17:00</span>
+              <span>20:00</span>
+              <span>22:00</span>
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <div class="progreso-container">
+      <h1>Progrés de l'Usuari</h1>
+
+      <!-- Resumen general -->
+      <div class="cohete-central">
+        <img src="../img/cohete.svg" alt="Cohete" class="cohete-grande" id="coheteGrande">
+        <svg class="circulo-porcentaje">
+          <circle class="progress-ring-circle"></circle>
+          <circle class="progress-ring-circle-fill"></circle>
+        </svg>
+        <span class="porcentaje" id="porcentaje">78%</span>
+      </div>
+
+      <!-- Pestañas -->
+      <div class="pestanas">
+        <button class="pestana activa" data-tab="diario">Diari</button>
+        <button class="pestana" data-tab="semanal">Setmanal</button>
+        <button class="pestana" data-tab="mensual">Mensual</button>
+      </div>
+
+      <!-- Contenido de las pestañas -->
+      <div class="contenido-pestanas" id="contenidoPestanas">
+        <!-- Diario -->
+        <div class="tab-content diario activo">
+          <div class="seccion-progreso">
+            <h2>Activitat Física</h2>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Passos</span>
+              <span class="estadistica-valor" id="pasos">7,800 / 10,000</span>
+            </div>
+            <div class="barra-progreso">
+              <div class="barra-llena" style="width: 78%;"></div>
+            </div>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Distància</span>
+              <span class="estadistica-valor">5.6 km</span>
+            </div>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Calories</span>
+              <span class="estadistica-valor">320 kcal</span>
+            </div>
+          </div>
+          <div class="seccion-progreso">
+            <h2>Salut</h2>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Freqüència Cardíaca</span>
+              <span class="estadistica-valor" id="bpm">82 BPM</span>
+            </div>
+            <canvas id="bpmChart" class="responsive-chart"></canvas>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Son</span>
+              <span class="estadistica-valor">7h 20m (Bona qualitat)</span>
+            </div>
+          </div>
+          <div class="seccion-progreso">
+            <h2>Cumpliment</h2>
+            <div class="objetivo">
+              <span class="objetivo-titulo">Medicació (Matí)</span>
+              <span class="objetivo-estado completado">Completat</span>
+            </div>
+            <div class="objetivo">
+              <span class="objetivo-titulo">Cita Mèdica (14:00)</span>
+              <span class="objetivo-estado pendiente">Pendent</span>
+            </div>
+          </div>
+          <div class="seccion-progreso">
+            <h2>Estat Emocional</h2>
+            <div class="logro">
+              <span class="logro-titulo">08:00 - 12:00</span>
+              <span class="logro-estado feliz">Feliç</span>
+            </div>
+            <div class="logro">
+              <span class="logro-titulo">12:00 - 16:00</span>
+              <span class="logro-estado ansioso">Ansiós</span>
+            </div>
+          </div>
+          <div class="seccion-progreso">
+            <h2>Ubicació</h2>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Zona Segura</span>
+              <span class="estadistica-valor status-conectado">Dins de la zona</span>
+            </div>
+          </div>
+        </div>
+        <!-- Semanal -->
+        <div class="tab-content semanal">
+          <div class="seccion-progreso">
+            <h2>Resum Setmanal</h2>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Passos Mitjans</span>
+              <span class="estadistica-valor">8,200 / dia</span>
+            </div>
+            <canvas id="pasosSemanalChart" class="responsive-chart"></canvas>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Son Mitjà</span>
+              <span class="estadistica-valor">7h 15m / nit</span>
+            </div>
+          </div>
+        </div>
+        <!-- Mensual -->
+        <div class="tab-content mensual">
+          <div class="seccion-progreso">
+            <h2>Resum Mensual</h2>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Dies Actius</span>
+              <span class="estadistica-valor">22 / 30 dies</span>
+            </div>
+            <div class="estadistica">
+              <span class="estadistica-titulo">Cumpliment Medicació</span>
+              <span class="estadistica-valor">95%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../Ajustes/ajustesfam.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../Progreso/progresofam.html" class="nav-item config activo" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../img/1 estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../fam.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../img/Home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../Perfil/perfilfam.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Animación del header-bottom
+    const headerBottom = document.getElementById("headerBottom");
+    headerBottom.addEventListener("click", () => {
+      headerBottom.classList.toggle("expandido");
+    });
+
+    // Corazón emocional
+    const corazonImg = document.querySelector(".corazon-img");
+    let emocionActual = "feliz";
+    corazonImg.classList.add(emocionActual);
+    setInterval(() => {
+      const emociones = ["feliz", "ansioso", "triste", "enojado"];
+      emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+      corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+      corazonImg.classList.add(emocionActual);
+    }, 5000);
+
+    // Navegación moderna
+    const navItems = document.querySelectorAll(".nav-item");
+    const liftyGuia = document.getElementById("liftyGuia");
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        navItems.forEach(i => i.classList.remove("activo"));
+        item.classList.add("activo");
+        const rect = item.getBoundingClientRect();
+        liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+        liftyGuia.classList.add("viajar");
+        if (item.dataset.seccion === "config") {
+          document.querySelector(".cohete").classList.add("despegar");
+        }
+      });
+    });
+
+    // Interactividad de los días
+    const dias = document.querySelectorAll(".dia");
+    dias.forEach(dia => {
+      dia.addEventListener("click", () => {
+        const parentCirculos = dia.closest(".circulos");
+        parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+        dia.classList.add("seleccionado");
+      });
+    });
+
+    // Cohete central
+    const coheteGrande = document.getElementById("coheteGrande");
+    coheteGrande.addEventListener("click", () => {
+      coheteGrande.classList.add("despegar");
+      setTimeout(() => coheteGrande.classList.remove("despegar"), 1000);
+    });
+
+    // Pestañas
+    const pestanas = document.querySelectorAll(".pestana");
+    const contenidos = document.querySelectorAll(".tab-content");
+    pestanas.forEach(pestana => {
+      pestana.addEventListener("click", () => {
+        pestanas.forEach(p => p.classList.remove("activa"));
+        contenidos.forEach(c => c.classList.remove("activo"));
+        pestana.classList.add("activa");
+        document.querySelector(`.tab-content.${pestana.dataset.tab}`).classList.add("activo");
+      });
+    });
+
+    // Gráfico de BPM (diario)
+    const bpmChart = new Chart(document.getElementById("bpmChart"), {
+      type: "line",
+      data: {
+        labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"],
+        datasets: [{
+          label: "BPM",
+          data: [70, 75, 80, 82, 78, 80],
+          borderColor: "#2595CD",
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { beginAtZero: false, suggestedMin: 60, suggestedMax: 100 }
+        }
+      }
+    });
+
+    // Gráfico de pasos semanal
+    const pasosSemanalChart = new Chart(document.getElementById("pasosSemanalChart"), {
+      type: "bar",
+      data: {
+        labels: ["Dl", "Dm", "Dc", "Dj", "Dv", "Ds", "Dg"],
+        datasets: [{
+          label: "Passos",
+          data: [8200, 7500, 9000, 8800, 7800, 8200, 7000],
+          backgroundColor: "#2595CD"
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // Ajustar tamaño de gráficos en móviles
+    function adjustCharts() {
+      const charts = [bpmChart, pasosSemanalChart];
+      charts.forEach(chart => {
+        chart.resize();
+      });
+    }
+    window.addEventListener("resize", adjustCharts);
+    window.addEventListener("load", adjustCharts);
+
+    // Actualización en tiempo real (simulada)
+    setInterval(() => {
+      const pasos = Math.floor(Math.random() * 2000) + 7000;
+      document.getElementById("pasos").textContent = `${pasos} / 10,000`;
+      document.querySelector(".barra-llena").style.width = `${(pasos / 10000) * 100}%`;
+      const bpm = Math.floor(Math.random() * 20) + 70;
+      document.getElementById("bpm").textContent = `${bpm} BPM`;
+      const porcentaje = Math.floor((pasos / 10000) * 50 + (bpm / 100) * 50);
+      document.getElementById("porcentaje").textContent = `${porcentaje}%`;
+      const strokeDashoffset = 289.02 * (1 - porcentaje / 100); // Ajustado para r=46
+      document.querySelector(".progress-ring-circle-fill").style.strokeDashoffset = strokeDashoffset;
+    }, 10000);
+
+
+    closeIaChat.addEventListener("click", () => {
+      iaChatTab.style.display = "none";
+    });
+
+    iaSendMessage.addEventListener("click", sendIaMessage);
+    iaUserInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendIaMessage();
+    });
+
+    function sendIaMessage() {
+      const message = iaUserInput.value.trim();
+      if (message) {
+        const userMsg = document.createElement("div");
+        userMsg.classList.add("mensaje", "usuario");
+        userMsg.textContent = message;
+        iaChatBody.appendChild(userMsg);
+        iaUserInput.value = "";
+        setTimeout(() => {
+          const iaMsg = document.createElement("div");
+          iaMsg.classList.add("mensaje", "lifty");
+          iaMsg.textContent = "Com et puc ajudar amb el progrés? Pots demanar detalls sobre passos, salut o més!";
+          iaChatBody.appendChild(iaMsg);
+          iaChatBody.scrollTop = iaChatBody.scrollHeight;
+        }, 1000);
+      }
+    }
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "ca-ES";
+    recognition.continuous = false;
+
+    iaVoiceBtn.addEventListener("click", () => {
+      recognition.start();
+      iaVoiceBtn.style.background = "#FF5E62";
+    });
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      iaUserInput.value = transcript;
+      sendIaMessage();
+    };
+
+    recognition.onend = () => {
+      iaVoiceBtn.style.background = "";
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Error en el reconeixement de veu:", event.error);
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Perfil del Cuidador</title>
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+  <link rel="icon" sizes="192x192" href="../img/icon.png">
+  <link rel="icon" sizes="512x512" href="../img/icon.png">
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="perfilfam.css">
+  <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+  <!-- Contenedor de estrellas -->
+  <div class="stars-container">
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="star"></div><div class="star"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <svg class="corazon-img" viewBox="0 0 100 100" width="25" height="25">
+            <path class="corazon-path" d="M50 88.87C17.73 70.47 10 52.67 10 37.5a20 20 0 0134.64-13.33L50 30.73l5.36-6.56A20 20 0 0190 37.5c0 15.17-7.73 32.97-40 51.37z" />
+          </svg>
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>8:00</span>
+              <span>10:00</span>
+              <span>14:00</span>
+              <span>17:00</span>
+              <span>20:00</span>
+              <span>22:00</span>
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <div class="perfil-container">
+      <h1>Perfil del Cuidador</h1>
+
+      <!-- Foto de perfil -->
+      <div class="foto-perfil">
+        <img src="../../img/cuidador-placeholder.png" alt="Foto de Perfil del Cuidador" id="avatarActual">
+        <button class="editar-avatar" id="editarAvatar">Editar</button>
+      </div>
+
+      <!-- Nombre del cuidador -->
+      <div class="nombre-usuario">
+        <h2>Maria López</h2>
+      </div>
+
+      <!-- Información del cuidador -->
+      <div class="info-cuidador">
+        <p><strong>Correu:</strong> maria.lopez@example.com</p>
+        <p><strong>Telèfon:</strong> +34 612 345 678</p>
+        <p><strong>Relació:</strong> Cuidador Principal</p>
+        <p><strong>Data de Registre:</strong> 01/02/2025</p>
+        <button class="btn-editar">Editar Informació</button>
+      </div>
+
+      <!-- Modal para elegir avatar -->
+      <div class="modal-avatars" id="modalAvatars" style="display: none;">
+        <div class="modal-content">
+          <h3>Tria el teu avatar</h3>
+          <div class="avatars">
+            <img src="../../img/avatar1.png" alt="Avatar 1" class="avatar-opcion" data-avatar="avatar1.png">
+            <img src="../../img/avatar2.png" alt="Avatar 2" class="avatar-opcion" data-avatar="avatar2.png">
+            <img src="../../img/avatar3.png" alt="Avatar 3" class="avatar-opcion" data-avatar="avatar3.png">
+          </div>
+          <button class="cerrar-modal" id="cerrarModal">Tancar</button>
+        </div>
+      </div>
+
+      <!-- Botón para cerrar sesión -->
+      <div class="cerrar-sesion">
+        <button class="btn-cerrar">Tancar Sessió</button>
+      </div>
+    </div>
+
+    <!-- Chat IA -->
+    <div class="chat-tab" id="iaChatTab">
+      <div class="chat-header">
+        <h2>Chat amb Lifty</h2>
+        <button class="close-btn" id="closeIaChat">X</button>
+      </div>
+      <div class="chat-body" id="iaChatBody">
+        <div class="mensaje lifty">Hola! Com et puc ajudar amb el perfil del cuidador?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="iaUserInput" placeholder="Escriu aquí...">
+        <button id="iaSendMessage">Enviar</button>
+        <button id="iaVoiceBtn">🎙️</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../Ajustes/ajustesfam.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../Progreso/progresofam.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../img/1 estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../fam.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../img/Home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../Historial/historialfam.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../Perfil/perfilfam.html" class="nav-item perfil activo" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <script>
+    // Animación del header-bottom
+    const headerBottom = document.getElementById("headerBottom");
+    headerBottom.addEventListener("click", () => {
+      headerBottom.classList.toggle("expandido");
+    });
+
+    // Corazón emocional
+    const corazonImg = document.querySelector(".corazon-img");
+    let emocionActual = "feliz";
+    corazonImg.classList.add(emocionActual);
+    setInterval(() => {
+      const emociones = ["feliz", "ansioso", "triste", "enojado"];
+      emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+      corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+      corazonImg.classList.add(emocionActual);
+    }, 5000);
+
+    // Navegación moderna
+    const navItems = document.querySelectorAll(".nav-item");
+    const liftyGuia = document.getElementById("liftyGuia");
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        navItems.forEach(i => i.classList.remove("activo"));
+        item.classList.add("activo");
+        const rect = item.getBoundingClientRect();
+        liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+        liftyGuia.classList.add("viajar");
+      });
+    });
+
+    // Interactividad de los días
+    const dias = document.querySelectorAll(".dia");
+    dias.forEach(dia => {
+      dia.addEventListener("click", () => {
+        const parentCirculos = dia.closest(".circulos");
+        parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+        dia.classList.add("seleccionado");
+      });
+    });
+
+    // Modal para avatares
+    const editarAvatar = document.getElementById("editarAvatar");
+    const modalAvatars = document.getElementById("modalAvatars");
+    const cerrarModal = document.getElementById("cerrarModal");
+    const avatarActual = document.getElementById("avatarActual");
+    const avatarOpciones = document.querySelectorAll(".avatar-opcion");
+
+    editarAvatar.addEventListener("click", () => {
+      modalAvatars.style.display = "block";
+    });
+
+    cerrarModal.addEventListener("click", () => {
+      modalAvatars.style.display = "none";
+    });
+
+    avatarOpciones.forEach(opcion => {
+      opcion.addEventListener("click", () => {
+        const nuevoAvatar = opcion.dataset.avatar;
+        avatarActual.src = `../img/${nuevoAvatar}`;
+        modalAvatars.style.display = "none";
+      });
+    });
+
+    // Botones simulados
+    document.querySelector(".btn-editar").addEventListener("click", () => {
+      alert("Editant informació del cuidador...");
+    });
+
+    document.querySelector(".btn-cerrar").addEventListener("click", () => {
+      alert("Sessió tancada.");
+    });
+
+
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "ca-ES";
+    recognition.continuous = false;
+
+    iaVoiceBtn.addEventListener("click", () => {
+      recognition.start();
+      iaVoiceBtn.style.background = "#FF5E62";
+    });
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      iaUserInput.value = transcript;
+      sendIaMessage();
+    };
+
+    recognition.onend = () => {
+      iaVoiceBtn.style.background = "";
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Error en el reconeixement de veu:", event.error);
+    };
+  </script>
+</body>
+</html>

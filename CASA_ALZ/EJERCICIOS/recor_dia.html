@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Recordatoris Diaris</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="recor_dia.css">
+</head>
+<body>
+  <!-- Pantalla Negra (Pantalla 2) -->
+  <div class="black-screen" id="blackScreen"></div>
+
+  <!-- Pantalla de Emociones (Pantalla 3) -->
+  <div class="emotion-screen" id="emotionScreen">
+    <div class="emotion-sphere" id="emotionSphere">
+      <img src="../../img/emotion_image.png" alt="Emotion Image" class="emotion-image">
+    </div>
+    <div class="status-text" id="emotionText">Estat: Alegria</div>
+  </div>
+
+  <!-- Pantalla de Bloqueo con Notificaciones (Pantalla 4) -->
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-status-bar">
+      <span>Orange</span>
+      <div class="lock-status-icons">
+        <img src="../../img/wifi.svg" alt="wifi" class="wifi">
+      </div>
+    </div>
+    <div class="lock-date" id="lockDate"></div>
+    <div class="lock-time" id="lockTime"></div>
+    <div class="lifty-widget">
+      <img src="../../img/widgetlifty.svg" alt="Lifty Widget" class="lifty-widget-img">
+    </div>
+    <div class="notifications">
+      <div class="notification" id="notif1" data-target="pantalla1">Notificación 1</div>
+      <div class="notification" id="notif2" data-target="pantalla1">Notificación 2</div>
+    </div>
+    <div class="lock-actions">
+      <img src="../../img/linterna_bloqueo.svg" alt="Linterna" class="wifi">
+      <img src="../../img/camara_bloqueo.svg" alt="Cámara" class="wifi">
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+      <img src="../../img/liftyanimando.svg" alt="Lifty IA Chat" class="logo-ia" id="iaChatBtn">
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <img src="../../img/corazonapp.svg" alt="Corazón Emocional" class="corazon-img">
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal (diseño visual de los recordatorios que te gustó) -->
+  <main class="contenido">
+    <section class="recordatoris-section" role="region" aria-label="Recordatoris Diaris">
+      <h2>Recordatoris Diaris</h2>
+      <div class="recordatoris-list" id="recordatoris-list">
+        <div class="recordatori" data-id="recordatori1">
+          <div class="recordatori-icon">
+            <span class="icon">💊</span>
+          </div>
+          <div class="recordatori-info">
+            <span class="recordatori-titol">Tomar medicació</span>
+            <span class="recordatori-hora">08:00</span>
+            <span class="recordatori-nota">Nota: Avisar al cuidador després de prendre-la.</span>
+          </div>
+          <button class="recordatori-btn" onclick="marcarCompletado('recordatori1')" aria-label="Marcar com completat: Tomar medicació">Completar</button>
+          <span class="recordatori-check" aria-hidden="true">✔</span>
+        </div>
+        <div class="recordatori" data-id="recordatori2">
+          <div class="recordatori-icon">
+            <span class="icon">🍽️</span>
+          </div>
+          <div class="recordatori-info">
+            <span class="recordatori-titol">Esmorzar</span>
+            <span class="recordatori-hora">09:00</span>
+            <span class="recordatori-nota">Nota: Preparar un esmorzar lleuger amb suc.</span>
+          </div>
+          <button class="recordatori-btn" onclick="marcarCompletado('recordatori2')" aria-label="Marcar com completat: Esmorzar">Completar</button>
+          <span class="recordatori-check" aria-hidden="true">✔</span>
+        </div>
+        <div class="recordatori" data-id="recordatori3">
+          <div class="recordatori-icon">
+            <span class="icon">📞</span>
+          </div>
+          <div class="recordatori-info">
+            <span class="recordatori-titol">Llamar a família</span>
+            <span class="recordatori-hora">11:00</span>
+            <span class="recordatori-nota">Nota: Trucar a la filla, Marta, al 123-456-789.</span>
+          </div>
+          <button class="recordatori-btn" onclick="marcarCompletado('recordatori3')" aria-label="Marcar com completat: Llamar a família">Completar</button>
+          <span class="recordatori-check" aria-hidden="true">✔</span>
+        </div>
+        <div class="recordatori" data-id="recordatori4">
+          <div class="recordatori-icon">
+            <span class="icon">🚶</span>
+          </div>
+          <div class="recordatori-info">
+            <span class="recordatori-titol">Passejar</span>
+            <span class="recordatori-hora">16:00</span>
+            <span class="recordatori-nota">Nota: Caminar 20 minuts pel parc amb companyia.</span>
+          </div>
+          <button class="recordatori-btn" onclick="marcarCompletado('recordatori4')" aria-label="Marcar com completat: Passejar">Completar</button>
+          <span class="recordatori-check" aria-hidden="true">✔</span>
+        </div>
+      </div>
+      <div class="todos-completados" id="todos-completados">
+        <span>Tots els recordatoris completats! Ben fet! 🎉</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../AJUSTES/ajustes.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../PROGRESO/progreso.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../../img/1_estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../CASA/casa.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../../img/home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../PERFIL/perfil.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <!-- Script -->
+  <script>
+    // Script para los recordatorios
+    document.addEventListener('DOMContentLoaded', () => {
+      const recordatoris = document.querySelectorAll('.recordatori');
+      let todosCompletados = true;
+
+      recordatoris.forEach(recordatori => {
+        const id = recordatori.dataset.id;
+        const estado = localStorage.getItem(id);
+        if (estado === 'completado') {
+          const btn = recordatori.querySelector('.recordatori-btn');
+          btn.textContent = 'Completat';
+          btn.classList.add('completat');
+          btn.disabled = true;
+          recordatori.classList.add('completado');
+        } else {
+          todosCompletados = false;
+        }
+      });
+
+      const todosCompletadosDiv = document.getElementById('todos-completados');
+      if (todosCompletados) {
+        todosCompletadosDiv.style.display = 'flex';
+      }
+    });
+
+    function marcarCompletado(id) {
+      const recordatori = document.querySelector(`.recordatori[data-id="${id}"]`);
+      const btn = recordatori.querySelector('.recordatori-btn');
+      
+      btn.textContent = 'Completat';
+      btn.classList.add('completat');
+      btn.disabled = true;
+      recordatori.classList.add('completado');
+
+      localStorage.setItem(id, 'completado');
+
+      const recordatoris = document.querySelectorAll('.recordatori');
+      const todosCompletados = Array.from(recordatoris).every(r => r.classList.contains('completado'));
+      const todosCompletadosDiv = document.getElementById('todos-completados');
+      if (todosCompletados) {
+        todosCompletadosDiv.style.display = 'flex';
+      }
+    }
+
+    // Script del header y navegación
+    document.addEventListener("DOMContentLoaded", () => {
+      const headerBottom = document.getElementById("headerBottom");
+      const corazonImg = document.querySelector(".corazon-img");
+      headerBottom.addEventListener("click", () => {
+        headerBottom.classList.toggle("expandido");
+      });
+
+      let emocionActual = "feliz";
+      corazonImg.classList.add(emocionActual);
+      const navItems = document.querySelectorAll(".nav-item");
+      const liftyGuia = document.getElementById("liftyGuia");
+
+      navItems.forEach(item => {
+        item.addEventListener("click", () => {
+          navItems.forEach(i => i.classList.remove("activo"));
+          item.classList.add("activo");
+          const rect = item.getBoundingClientRect();
+          liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+          liftyGuia.classList.add("viajar");
+          if (item.dataset.seccion === "progreso") {
+            document.querySelector(".cohete").classList.add("despegar");
+          }
+        });
+      });
+
+      setInterval(() => {
+        const emociones = ["feliz", "ansioso", "triste", "enojado"];
+        emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+        corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+        corazonImg.classList.add(emocionActual);
+        document.querySelector(".emotion-icon")?.classList.remove("feliz", "ansioso", "triste", "enojado");
+        document.querySelector(".emotion-icon")?.classList.add(emocionActual);
+      }, 5000);
+
+      const dias = document.querySelectorAll(".dia");
+      dias.forEach(dia => {
+        dia.addEventListener("click", () => {
+          const parentCirculos = dia.closest(".circulos");
+          parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+          dia.classList.add("seleccionado");
+        });
+      });
+
+      const blackScreen = document.getElementById("blackScreen");
+      const emotionScreen = document.getElementById("emotionScreen");
+      const emotionSphere = document.getElementById("emotionSphere");
+      const emotionText = document.getElementById("emotionText");
+      const lockScreen = document.getElementById("lockScreen");
+      const lockTime = document.getElementById("lockTime");
+      const lockDate = document.getElementById("lockDate");
+      const notif1 = document.getElementById("notif1");
+      const notif2 = document.getElementById("notif2");
+      const logoLifty = document.querySelector(".logo");
+      const emotionImage = document.querySelector(".emotion-image");
+
+      const emociones = ["alegria", "tristeza", "enfado", "calma"];
+      let emotionIndex = 0;
+
+      const emotionImages = {
+        alegria: "../../img/alegria_image.png",
+        tristeza: "../../img/tristeza_image.png",
+        enfado: "../../img/lifty_enfadado.svg",
+        calma: "../../img/calma_image.png"
+      };
+
+      function getCentralEuropeTime() {
+        const now = new Date();
+        const timeOptions = {
+          timeZone: "Europe/Paris",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false
+        };
+        const dateOptions = {
+          timeZone: "Europe/Paris",
+          weekday: "long",
+          day: "numeric",
+          month: "long"
+        };
+        const time = now.toLocaleTimeString("ca-ES", timeOptions);
+        const date = now.toLocaleDateString("ca-ES", dateOptions);
+        return { time, date };
+      }
+
+      function updateLockTime() {
+        const { time, date } = getCentralEuropeTime();
+        lockTime.textContent = time;
+        lockDate.textContent = date.charAt(0).toUpperCase() + date.slice(1);
+      }
+
+      if (!logoLifty) {
+        console.error("No se encontró el elemento con la clase 'logo'. Verifica el HTML.");
+      } else {
+        console.log("Logo encontrado:", logoLifty);
+      }
+
+      logoLifty.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("Clic en el logo detectado");
+        console.log("Estado actual de blackScreen:", blackScreen.classList);
+        blackScreen.classList.add("active");
+        console.log("Estado de blackScreen després d'afegir 'active':", blackScreen.classList);
+      });
+
+      blackScreen.addEventListener("click", () => {
+        console.log("Clic en pantalla negra, mostrando Pantalla 3");
+        blackScreen.classList.remove("active");
+        emotionScreen.classList.add("active");
+        const emocionActual = emociones[emotionIndex];
+        emotionScreen.className = "emotion-screen active " + emocionActual;
+        emotionText.textContent = `Estat: ${emocionActual.charAt(0).toUpperCase() + emocionActual.slice(1)}`;
+        emotionImage.src = emotionImages[emocionActual];
+      });
+
+      emotionSphere.addEventListener("click", () => {
+        console.log("Clic en la esfera, mostrando Pantalla 4");
+        emotionScreen.classList.remove("active");
+        lockScreen.classList.add("active");
+        updateLockTime();
+        setInterval(updateLockTime, 1000);
+
+        const emocionActual = emociones[emotionIndex];
+        switch (emocionActual) {
+          case "alegria":
+            notif1.textContent = "Estàs brillant avui! Vols compartir-ho amb Lifty?";
+            notif2.textContent = "Aprofita la teva energia completant tasques diàries!";
+            break;
+          case "tristeza":
+            notif1.textContent = "Un dia gris? Lifty està amb tu.";
+            notif2.textContent = "Petits passos poden il·luminar el teu dia. Vols que parlem?";
+            break;
+          case "enfado":
+            notif1.textContent = "Tot et fa sortir de polleguera? Entra i fes passos de respiració amb Lifty.";
+            notif2.textContent = "Descàrrega parlant del teu dia, entra ara!";
+            break;
+          case "calma":
+            notif1.textContent = "Flueix amb tranquil·litat, revisa Lifty.";
+            notif2.textContent = "Mantingues la pau, les teves tasques t'esperen.";
+            break;
+        }
+
+        emotionIndex = (emotionIndex + 1) % emociones.length;
+      });
+
+      const notifications = document.querySelectorAll(".notification");
+      notifications.forEach(notif => {
+        notif.addEventListener("click", () => {
+          console.log("Clic en notificación, volviendo a Pantalla 1");
+          lockScreen.classList.remove("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

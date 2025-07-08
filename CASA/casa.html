@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Casa</title>
+
+  <meta name="theme-color" content="#2595CD">
+  <meta name="msapplication-navbutton-color" content="#2595CD">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2595CD">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="casa.css">
+</head>
+<body>
+
+  <!-- Pantalla Negra (Pantalla 2) -->
+  <div class="black-screen" id="blackScreen"></div>
+
+  <!-- Pantalla de Emociones (Pantalla 3) -->
+  <div class="emotion-screen" id="emotionScreen">
+    <div class="emotion-sphere" id="emotionSphere">
+      <img src="../img/emotion-image.png" alt="Emotion Image" class="emotion-image">
+    </div>
+    <div class="status-text" id="emotionText">Estat: Alegria</div>
+  </div>
+
+  <!-- Pantalla de Bloqueo con Notificaciones (Pantalla 4) -->
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-status-bar">
+      <span>Orange</span>
+      <div class="lock-status-icons">
+        <img src="../img/wifi.svg" alt="wifi" class="wifi">
+      </div>
+    </div>
+    <div class="lock-date" id="lockDate"></div>
+    <div class="lock-time" id="lockTime"></div>
+    <div class="lifty-widget">
+      <img src="../img/widgetlifty.svg" alt="Lifty Widget" class="lifty-widget-img">
+    </div>
+    <div class="notifications">
+      <div class="notification" id="notif1" data-target="pantalla1">Notificación 1</div>
+      <div class="notification" id="notif2" data-target="pantalla1">Notificación 2</div>
+    </div>
+    <div class="lock-actions">
+      <img src="../img/linterna_bloqueo.svg" alt="wifi" class="wifi">
+      <img src="../img/camara_bloqueo.svg" alt="wifi" class="wifi">
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <img src="../img/lifty2blanco.png" alt="Lifty Logo" class="logo">
+      <!-- Eliminamos el botón de IA (logo-ia) -->
+    </div>
+    <div class="header-bottom" id="headerBottom">
+      <div class="progreso">
+        <div class="icono-contenedor">
+          <img src="../img/cohete.svg" alt="Cohete Progreso" class="cohete">
+          <span class="etiqueta">Ratxa</span>
+        </div>
+        <div class="detalle-progreso">
+          <span class="progreso-numero">75 punts</span>
+          <div class="barra-progreso">
+            <div class="barra-llena"></div>
+          </div>
+          <span class="racha-dias">10 dies ratxa de punts</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>Di</span>
+              <span>Dm</span>
+              <span>X</span>
+              <span>Dj</span>
+              <span>Dv</span>
+              <span>Ds</span>
+              <span>D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="corazon" id="corazon">
+        <div class="icono-contenedor">
+          <svg class="corazon-img" viewBox="0 0 100 100" width="50" height="50">
+            <path class="corazon-path" d="M50 88.87C17.73 70.47 10 52.67 10 37.5a20 20 0 0134.64-13.33L50 30.73l5.36-6.56A20 20 0 0190 37.5c0 15.17-7.73 32.97-40 51.37z" />
+          </svg>
+          <span class="etiqueta">Nervis</span>
+        </div>
+        <div class="detalle-corazon">
+          <span class="corazon-numero">80 BPM</span>
+          <div class="barra-progreso">
+            <div class="barra-llena corazon-barra"></div>
+          </div>
+          <span class="racha-horas">5 hores estat emocional</span>
+          <div class="dias-semana">
+            <div class="circulos">
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia marcado"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+              <span class="dia"></span>
+            </div>
+            <div class="etiquetas-dias">
+              <span>8:00</span>
+              <span>10:00</span>
+              <span>14:00</span>
+              <span>17:00</span>
+              <span>20:00</span>
+              <span>22:00</span>
+              <span>00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="contenido">
+    <div class="quantum-dashboard" id="quantumDashboard">
+      <div class="score-section">
+        <p>Hola! Sóc en Lifty, com puc ajudar-te avui?</p>
+        <div class="score-circle lifty-circle">
+          <div class="lifty-animation"></div>
+        </div>
+      </div>
+
+      <!-- Stats Section (tarjetas clicables) -->
+      <div class="stats-section">
+        <div class="stat-card" onclick="contactFamily()">
+          <div class="icon familia-icon"></div>
+          <p>CONTACTE AMB LA FAMÍLIA</p>
+          <p class="status pending">Pendent</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pestanas" id="pestanas">
+      <button class="pestana" data-tab="academic">Acadèmic</button>
+      <button class="pestana" data-tab="dia">Dia</button>
+    </div>
+
+    <!-- Contenedores para el contenido de cada pestaña -->
+    <div class="contenido-pestanas">
+      <div class="contenido-tab" id="academic">
+        <!-- Subpestañas para la pestaña Académico -->
+        <div class="subpestanas">
+          <a href="../CASA/ACADEMICO/horario.html" class="subpestana subpestana-activa">Horari</a>
+          <a href="../CASA/ACADEMICO/agenda.html" class="subpestana">Agenda</a> 
+          <a href="../CASA/ACADEMICO/ayudalifty.html" class="subpestana">Ajuda Lifty</a>
+        </div>
+      </div>
+      <div class="contenido-tab" id="dia" style="display: none;">
+        <!-- Subpestañas para la pestaña Día -->
+        <div class="subpestanas">
+          <a href="../CASA/DIA/recordatorios.html" class="subpestana subpestana-activa">Recordatoris Diaris</a>
+          <a href="../CASA/DIA/apoyoemocional.html" class="subpestana">Suport Emocional</a>
+          <a href="../CASA/DIA/tareas.html" class="subpestana">Tasques Diàries</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Eliminamos el chat-tab ya que ya no se necesita -->
+  </main>
+
+  <!-- Navegación -->
+  <nav class="navegacion-moderna">
+    <a href="../AJUSTES/ajustes.html" class="nav-item casa" data-seccion="casa">
+      <div class="nav-icon">
+        <img src="../img/settings.svg" alt="Ajustes">
+      </div>
+      <span class="nav-label">Configuració</span>
+    </a>
+    <a href="../PROGRESO/progreso.html" class="nav-item config" data-seccion="config">
+      <div class="nav-icon">
+        <img src="../img/1 estrella.svg" alt="Progreso">
+      </div>
+      <span class="nav-label">Progrès</span>
+    </a>
+    <a href="../CASA/casa.html" class="nav-item progreso" data-seccion="progreso">
+      <div class="nav-icon">
+        <img src="../img/Home.svg" alt="Casa">
+      </div>
+      <span class="nav-label">Casa</span>
+    </a>
+    <a href="../HISTORIAL/historial.html" class="nav-item historial" data-seccion="historial">
+      <div class="nav-icon">
+        <img src="../img/historial.svg" alt="Historial">
+      </div>
+      <span class="nav-label">Historial</span>
+    </a>
+    <a href="../PERFIL/perfil.html" class="nav-item perfil" data-seccion="perfil">
+      <div class="nav-icon">
+        <img src="../img/perfil.svg" alt="Perfil">
+      </div>
+      <span class="nav-label">Perfil</span>
+    </a>
+    <img src="../img/liftycohete.png" alt="Lifty Guía" class="lifty-guia" id="liftyGuia">
+  </nav>
+
+  <!-- Script -->
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM cargado, inicializando scripts");
+
+  // Funcionalidad existente
+  const headerBottom = document.getElementById("headerBottom");
+  const corazonImg = document.querySelector(".corazon-img");
+  headerBottom.addEventListener("click", () => {
+    headerBottom.classList.toggle("expandido");
+    adjustPestanasPosition();
+  });
+
+  let emocionActual = "feliz";
+  if (corazonImg) {
+    corazonImg.classList.add(emocionActual);
+  } else {
+    console.error("No se encontró .corazon-img. Verifica el HTML.");
+  }
+
+  const navItems = document.querySelectorAll(".nav-item");
+  const liftyGuia = document.getElementById("liftyGuia");
+
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      navItems.forEach(i => i.classList.remove("activo"));
+      item.classList.add("activo");
+      const rect = item.getBoundingClientRect();
+      liftyGuia.style.left = `${rect.left + rect.width / 2 - 15}px`;
+      liftyGuia.classList.add("viajar");
+      if (item.dataset.seccion === "progreso") {
+        document.querySelector(".cohete").classList.add("despegar");
+      }
+    });
+  });
+
+  setInterval(() => {
+  const emociones = ["feliz", "ansioso", "triste", "enojado"];
+  emocionActual = emociones[Math.floor(Math.random() * emociones.length)];
+  if (corazonImg) {
+    corazonImg.classList.remove("feliz", "ansioso", "triste", "enojado");
+    corazonImg.classList.add(emocionActual);
+    console.log(`Corazón cambiado a emoción: ${emocionActual}`);
+  }
+}, 5000);
+
+  const dias = document.querySelectorAll(".dia");
+  dias.forEach(dia => {
+    dia.addEventListener("click", () => {
+      const parentCirculos = dia.closest(".circulos");
+      parentCirculos.querySelectorAll(".dia").forEach(d => d.classList.remove("seleccionado"));
+      dia.classList.add("seleccionado");
+    });
+  });
+
+  function adjustPestanasPosition() {
+    const header = document.querySelector(".header");
+    const pestanas = document.getElementById("pestanas");
+    const headerHeight = header.offsetHeight;
+    pestanas.style.top = `${headerHeight}px`;
+  }
+
+  window.addEventListener("load", adjustPestanasPosition);
+  window.addEventListener("resize", adjustPestanasPosition);
+
+  const pestanas = document.querySelectorAll(".pestana");
+  const contenidos = document.querySelectorAll(".contenido-tab");
+  const quantumDashboard = document.getElementById("quantumDashboard");
+
+  quantumDashboard.style.display = "block";
+
+  pestanas.forEach(pestana => {
+    pestana.addEventListener("click", () => {
+      const tabId = pestana.dataset.tab;
+      const contenido = document.getElementById(tabId);
+
+      if (pestana.classList.contains("pestana-activa")) {
+        pestana.classList.remove("pestana-activa");
+        contenido.style.display = "none";
+        quantumDashboard.style.display = "block";
+      } else {
+        pestanas.forEach(p => p.classList.remove("pestana-activa"));
+        contenidos.forEach(c => c.style.display = "none");
+        pestana.classList.add("pestana-activa");
+        contenido.style.display = "block";
+        quantumDashboard.style.display = "none";
+      }
+    });
+  });
+
+  const subpestanas = document.querySelectorAll(".subpestana");
+  subpestanas.forEach(subpestana => {
+    subpestana.addEventListener("click", () => {
+      const parentSubpestanas = subpestana.closest(".subpestanas");
+      parentSubpestanas.querySelectorAll(".subpestana").forEach(sp => sp.classList.remove("subpestana-activa"));
+      subpestana.classList.add("subpestana-activa");
+    });
+  });
+
+  const blackScreen = document.getElementById("blackScreen");
+  const emotionScreen = document.getElementById("emotionScreen");
+  const emotionSphere = document.getElementById("emotionSphere");
+  const emotionText = document.getElementById("emotionText");
+  const lockScreen = document.getElementById("lockScreen");
+  const lockTime = document.getElementById("lockTime");
+  const lockDate = document.getElementById("lockDate");
+  const notif1 = document.getElementById("notif1");
+  const notif2 = document.getElementById("notif2");
+  const logoLifty = document.querySelector(".logo");
+  const emotionImage = document.querySelector(".emotion-image");
+
+  const emociones = ["alegria", "tristeza", "enfado", "calma"];
+  let emotionIndex = 0;
+
+  const emotionImages = {
+    alegria: "../img/alegre_emocion.svg",
+    tristeza: "../img/triste_emocion.svg",
+    enfado: "../img/rabia_emocion.svg",
+    calma: "../img/calma_emocion.svg"
+  };
+
+  function getCentralEuropeTime() {
+    const now = new Date();
+    const timeOptions = {
+      timeZone: "Europe/Paris",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    };
+    const dateOptions = {
+      timeZone: "Europe/Paris",
+      weekday: "long",
+      day: "numeric",
+      month: "long"
+    };
+    const time = now.toLocaleTimeString("ca-ES", timeOptions);
+    const date = now.toLocaleDateString("ca-ES", dateOptions);
+    return { time, date };
+  }
+
+  function updateLockTime() {
+    const { time, date } = getCentralEuropeTime();
+    lockTime.textContent = time;
+    lockDate.textContent = date.charAt(0).toUpperCase() + date.slice(1);
+  }
+
+  if (!logoLifty) {
+    console.error("No se encontró el elemento con la clase 'logo'. Verifica el HTML.");
+  } else {
+    console.log("Logo encontrado:", logoLifty);
+  }
+
+  logoLifty.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("Clic en el logo detectado");
+    blackScreen.classList.add("active");
+  });
+
+  blackScreen.addEventListener("click", () => {
+    console.log("Clic en pantalla negra, mostrando Pantalla 3");
+    blackScreen.classList.remove("active");
+    emotionScreen.classList.add("active");
+    const emocionActual = emociones[emotionIndex];
+    emotionScreen.className = "emotion-screen active " + emocionActual;
+    emotionText.textContent = `Estat: ${emocionActual.charAt(0).toUpperCase() + emocionActual.slice(1)}`;
+    emotionImage.src = emotionImages[emocionActual];
+  });
+
+  emotionSphere.addEventListener("click", () => {
+    console.log("Clic en la esfera, mostrando Pantalla 4");
+    emotionScreen.classList.remove("active");
+    lockScreen.classList.add("active");
+    updateLockTime();
+    setInterval(updateLockTime, 1000);
+
+    const emocionActual = emociones[emotionIndex];
+    switch (emocionActual) {
+      case "alegria":
+        notif1.textContent = "Estàs brillant avui!\nVols compartir-ho amb Lifty?";
+        notif2.textContent = "Aprofita la teva energia completant tasques diàries!";
+        break;
+      case "tristeza":
+        notif1.textContent = "Un dia gris? Lifty està amb tu.";
+        notif2.textContent = "Petits passos poden il·luminar el teu dia. Vols que parlem?";
+        break;
+      case "enfado":
+        notif1.textContent = "Tot et fa sortir de polleguera? Entra i fes passos de respiració amb Lifty.";
+        notif2.textContent = "Descàrrega parlant del teu dia, entra ara!";
+        break;
+      case "calma":
+        notif1.textContent = "Flueix amb tranquil·litat, revisa Lifty.";
+        notif2.textContent = "Mantingues la pau, les teves tasques t'esperen.";
+        break;
+    }
+
+    emotionIndex = (emotionIndex + 1) % emociones.length;
+  });
+
+  const notifications = document.querySelectorAll(".notification");
+  notifications.forEach(notif => {
+    notif.addEventListener("click", () => {
+      console.log("Clic en notificación, volviendo a Pantalla 1");
+      lockScreen.classList.remove("active");
+    });
+  });
+
+  function contactFamily() {
+    console.log("Clic en Contacte amb la família");
+    blackScreen.classList.add("active");
+    setTimeout(() => {
+      try {
+        window.location.href = "tel:666666666";
+        blackScreen.classList.remove("active");
+      } catch (error) {
+        console.error("Error al iniciar la llamada:", error);
+        blackScreen.classList.remove("active");
+        alert("No es pot iniciar la trucada des d'aquest dispositiu.");
+      }
+    }, 500);
+  }
+  window.contactFamily = contactFamily;
+
+  // Funcionalidad para barras de sonido
+  const liftyCircle = document.querySelector(".score-circle.lifty-circle");
+  let isActive = false;
+
+  if (!liftyCircle) {
+    console.error("No se encontró .score-circle.lifty-circle. Verifica el HTML.");
+  } else {
+    console.log("liftyCircle encontrado:", liftyCircle);
+  }
+
+// Crear contenedor para barras de sonido
+const voiceWaves = document.createElement("div");
+voiceWaves.className = "voice-waves";
+for (let i = 0; i < 10; i++) { // Cambiado de 5 a 7 barras
+  const wave = document.createElement("div");
+  wave.className = "wave";
+  voiceWaves.appendChild(wave);
+}
+liftyCircle.appendChild(voiceWaves);
+console.log("Barras de sonido creadas:", voiceWaves);
+const waves = voiceWaves.querySelectorAll(".wave");
+console.log("Número de barras:", waves.length);
+
+  // Evento de clic para activar/desactivar barras
+  if (liftyCircle) {
+    liftyCircle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      console.log("Clic en lifty-circle:", e.target);
+      liftyCircle.classList.add("clicked");
+      isActive = !isActive;
+
+      if (isActive) {
+        console.log("Activando barras de sonido");
+        liftyCircle.classList.add("listening");
+        waves.forEach((wave, index) => {
+          wave.classList.add("active");
+          console.log(`Barra ${index + 1} activada`);
+        });
+      } else {
+        console.log("Desactivando barras de sonido");
+        liftyCircle.classList.remove("listening");
+        waves.forEach((wave, index) => {
+          wave.classList.remove("active");
+          console.log(`Barra ${index + 1} desactivada`);
+        });
+      }
+
+      setTimeout(() => {
+        liftyCircle.classList.remove("clicked");
+      }, 1000);
+    });
+    console.log("Evento clic asignado a lifty-circle");
+  } else {
+    console.error("liftyCircle no encontrado");
+  }
+});
+  </script>
+</body>
+</html>
